@@ -3,15 +3,66 @@
 
   <head>
     <meta charset="UTF-8">
-    <title>Ailogio</title>
-    <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover" /><link rel="stylesheet" href="./style.css">
-
+    <title>AILogio</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover" />
+    <link rel="stylesheet" href="./style.css">
   </head>
     
   <body>
-  <div id="root"></div>
-    Ailogio Blog
 
+<section id="el3">
+  <p>Main Section 3 Visible Content</p>
+  
+  <!-- Point to the external file instead of storing content here -->
+  <button class="toggle-btn" 
+          data-target="sub-el3" 
+          data-file="content/sub-el3.html">
+    Show Sub 3
+  </button>
+  
+  <!-- Empty placeholder remains the same -->
+  <div id="sub-el3" class="reveal-section sub-content"></div>
+</section>
+
+
+
+
+    <script>
+document.addEventListener('click', async function (event) {
+  const btn = event.target;
+  
+  if (btn.hasAttribute('data-target')) {
+    const targetId = btn.getAttribute('data-target');
+    const targetEl = document.getElementById(targetId);
+    const filePath = btn.getAttribute('data-file');
+
+    if (targetEl) {
+      // ONLY fetch if the element is currently empty
+      if (targetEl.innerHTML.trim() === "" && filePath) {
+        try {
+          const response = await fetch(filePath);
+          if (!response.ok) throw new Error('Network response was not ok');
+          
+          const htmlContent = await response.text();
+          targetEl.innerHTML = htmlContent;
+        } catch (error) {
+          targetEl.innerHTML = "Error loading content. Please try again.";
+          console.error('Fetch error:', error);
+        }
+      }
+
+      // Existing reveal and scroll logic
+      targetEl.classList.add('active');
+      requestAnimationFrame(() => {
+        targetEl.classList.add('visible');
+      });
+      targetEl.scrollIntoView({ behavior: 'smooth', block: 'start' });
+    }
+  }
+});
+
+
+    </script>
   </body>
   
 </html>
