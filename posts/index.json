@@ -1,0 +1,57 @@
+[
+  {
+    "title": "My Post",
+    "description": "Learn how to build a lightweight client-side router for GitHub Pages using plain JavaScript and Hash routing for seamless navigation.",
+    "preview": "static/assets/logo.svg",
+    "preview_alt": "pv alt 1",
+    "slug": "my-post",
+    "date": "2024-03-01",
+    "lang": "en"
+  },
+  {
+    "title": "Il Mio Post",
+    "description": "Learn how to build a lightweight client-side router for GitHub Pages using plain JavaScript and Hash routing for seamless navigation.",
+    "preview": "static/assets/logo.svg",
+    "preview_alt": "pv alt 1",    
+    "slug": "il-mio-post",
+    "date": "2024-02-28",
+    "lang": "it"
+  },
+  {
+    "title": "Hello World",
+    "description": "Learn how to build a lightweight client-side router for GitHub Pages using plain JavaScript and Hash routing for seamless navigation.",
+    "preview": "static/assets/logo.svg",
+    "preview_alt": "pv alt 1",    
+    "slug": "hello-world",
+    "lang": "en",
+    "date": "2024-03-01"
+  },
+  {
+    "title": "Ciao Mondo",
+    "description": "Learn how to build a lightweight client-side router for GitHub Pages using plain JavaScript and Hash routing for seamless navigation.",
+    "preview": "static/assets/logo.svg",
+    "preview_alt": "pv alt 1",    
+    "slug": "ciao-mondo",
+    "lang": "it",
+    "date": "2024-03-02"
+  },
+  {
+    "title": "New Tech",
+    "description": "Learn how to build a lightweight client-side router for GitHub Pages using plain JavaScript and Hash routing for seamless navigation.",
+    "preview": "static/assets/logo.svg",
+    "preview_alt": "pv alt 1",    
+    "slug": "new-tech",
+    "lang": "en",
+    "date": "2024-03-01"
+  },
+  {
+    "title": "Nuova Tecnologia",
+    "description": "Learn how to build a lightweight client-side router for GitHub Pages using plain JavaScript and Hash routing for seamless navigation.",
+    "preview": "static/assets/logo.svg",
+    "preview_alt": "pv alt 1",    
+    "slug": "nuova-tech",
+    "lang": "it",
+    "date": "2024-03-02"
+  }
+]
+

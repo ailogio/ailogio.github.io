@@ -1,0 +1,26 @@
+<div class="section-wrapper">
+<header class="section-header">
+<h2 class="w3-wide cap-element">Contact</h2>
+<div id="contact_media">
+<a class="w3-padding-lr-8 button-m icon-social-gh" target="_blank" href="https://github.com/ailogio" title="Ailogio on GitHub"></a>
+<a class="w3-padding-lr-8 button-m icon-social-cp" target="_blank" href="https://codepen.io/ailogio" title="Ailogio on CodePen"></a>
+<a class="w3-padding-lr-8 button-m icon-social-hf" target="_blank" href="https://huggingface.co/ailogio" title="Ailogio on HuggingFace"> </a>
+<a class="w3-padding-lr-8 utton-m icon-social-bs" target="_blank" href="https://bsky.app/profile/sergio-ottovini.bsky.social" title="Ailogio on BSky"> </a>
+</div>
+<hgroup class="hgroup">
+<p class="subheading">
+Need development or get ready-2-use solutions?
+</p>
+</hgroup>
+<div class="cta-group">
+<label for="toggle-element" class="button">Click to Show</label>
+<a href="javascript:void(0)" class="nav-btn" data-loc="sectionSlots">El 1</a>
+<button href="#slots" class="btn filled primary button-a-primary" data-loc="sectionSlots">
+<span class="state-layer">Check the slots</span>
+</button>
+<button href="#" class="btn  secondary" popovertarget="chat-popover">
+<span class="state-layer">Ask a question</span>
+</button>
+</div>
+</header>
+</div>

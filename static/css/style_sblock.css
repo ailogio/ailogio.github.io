@@ -1,0 +1,660 @@
+@layer design-system, reset, base, utilities, components, layout, overrides;
+@import url("https://fonts.googleapis.com/css2?family=Source+Sans+3:wght@400..700&display=swap");
+@import "https://unpkg.com/open-props" layer(design-system);
+
+/* 1. Ensure the body takes up at least the full height of the screen */
+body {
+  margin: 0;
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+}
+
+/* 2. Tell the main section to expand and take up all remaining space */
+.main-content {
+  flex: 1;
+  background-color: #f1f1f1;
+  margin-top: 39px;
+}
+
+#app {
+  opacity: 0;
+  transition: opacity 0.4s ease-in-out;
+}
+
+#app.active {
+  opacity: 1;
+}
+
+/* 3. Style your footer as usual */
+.site-footer {
+  /* background: #333; */
+  /* color: white; */
+  padding: 20px;
+  text-align: center;
+}
+
+.wbg{
+    background-color: white;
+}
+
+@layer reset {
+
+    *,
+    ::before,
+    ::after {
+        box-sizing: border-box;
+    }
+
+    :where(:not(dialog)) {
+        margin: 0;
+    }
+
+    :where(html) {
+        -webkit-text-size-adjust: none;
+
+        @media (prefers-reduced-motion: no-preference) {
+            scroll-behavior: smooth;
+        }
+    }
+
+    :where(body) {
+        min-block-size: 100svb;
+        -webkit-font-smoothing: antialiased;
+    }
+}
+
+@layer base {
+    html {
+        --surface-1: white;
+        --text-1: var(--stone-11);
+        --primary: var(--indigo-7);
+        --secondary-container: var(--gray-12);
+        --font-family-default: "Source Sans 3", var(--font-neo-grotesque);
+
+        /* Override the default Open Props shadow properties for dark mode. 
+        Make sure to use @layer when importing Open Props. */
+
+        @media (prefers-color-scheme: dark) {
+            --shadow-color: 220 3% 15%;
+            --shadow-strength: 1%;
+        }
+    }
+}
+
+@layer layout {
+    .section {
+        /* background-image: url("https://raw.githubusercontent.com/mobalti/open-props-interfaces/refs/heads/main/ai-hero-chat-popover/assets/bg-gradient.jpg"); */
+        background-color: #f1f1f1 !important;
+        background-position: center;
+        background-repeat: no-repeat;
+        background-size: cover;
+        display: grid;
+        font-family: var(--font-family-default);
+     
+        padding-block: var(--size-8);
+        padding-inline: var(--size-7);
+        place-items: start center;
+        position: relative;
+
+        /* xl-n-below */
+        @media (width < 1440px) {
+            background-position: top 20% center;
+            background-size: 150%;
+        }
+
+        /* md-n-below */
+        @media (width < 768px) {
+            background-position: top 20% center;
+            background-size: 1000%;
+        }
+    }
+
+.section-size-400{
+   min-block-size: max(400px, 100svb);
+}
+    .logo-pic{
+        /* width: 50px;height: 50px; */
+        width: 42px;
+        height: 42px;
+    }
+
+    .section-container {
+        inline-size: min(1028px, 100%);
+    }
+
+    .section-wrapper {
+        display: grid;
+        place-items: center;
+        gap: var(--size-7);
+    }
+
+    .section-header {
+        display: grid;
+        place-items: center;
+        gap: var(--size-5);
+    }
+
+    .logo {
+        font-size: var(--font-size-4);
+        font-weight: var(--font-weight-7);
+    }
+
+    .hgroup {
+        display: grid;
+        place-items: center;
+        gap: var(--size-1);
+        text-align: center;
+    }
+
+    .headline-1 {
+        font-size: var(--font-size-5);
+    }
+
+    .subheading {
+        font-size: var(--font-size-3);
+    }
+
+    .cta-group {
+        display: grid;
+        gap: 12px;
+        grid-template-columns: 1fr;
+
+        /* sm-n-above */
+        @media (width >=560px) {
+            grid-auto-flow: column;
+            grid-template-columns: 1fr 1fr;
+        }
+    }
+
+    .section-cards {
+        display: grid;
+        padding: 0;
+        list-style: none;
+        gap: 32px;
+
+        @media (width >=460px) {
+            grid-template-columns: 1fr 1fr;
+            gap: 12px;
+        }
+
+        /* md-n-above */
+        @media (width >=768px) {
+            grid-template-columns: 1fr 1fr 1fr 1fr;
+        }
+    }
+
+    .card-wrap {
+        text-decoration: none;
+        color: var(--gray-12);
+        /* background: var(--card-bg); */
+        /* background-image: linear-gradient(170.96deg,
+                oklch(100% 0 0 / 60%) 18.95%,
+                oklch(100% 0 0 / 20%) 99.73%); */
+        display: grid;
+        block-size: 100%;
+        border-radius: 3px;
+        padding: 12px;
+        text-align:center;
+        cursor: pointer;
+        inline-size: 100%;
+    }
+
+        .card-wrap:hover {
+        text-decoration: none;
+        color: var(--gray-12);
+        background: var(--card-bg);
+                background-image: linear-gradient(170.96deg,
+                oklch(100% 0 0 / 60%) 18.95%,
+                oklch(100% 0 0 / 20%) 99.73%);
+        border-width: var(--border-size-1);
+        padding: 10px !important;
+        border-color: white;
+        border-style: solid;
+        cursor: pointer;
+        inline-size: 100%;
+    }
+
+    .figure {
+        display: grid;
+        gap: var(--size-3);
+        grid-template-rows: min-content 1fr;
+    }
+
+    .visual {
+        background-image: var(--gradient-15);
+        border-radius: 10px;
+        block-size: 175px;
+        overflow: clip;
+    }
+
+/* .visual {
+    background-image: var(--gradient-15);
+    border-radius: 10px;
+    block-size: 175px;
+    overflow: clip;
+    width: 112%;
+    margin-left: -6% !important;
+    margin-top: -5%;
+  } */
+
+    .img {
+        display: block;
+        inline-size: 100%;
+        block-size: 100%;
+        object-fit: cover;
+    }
+
+    .figcaption {
+        font-weight: var(--font-weight-7);
+        font-size: var(--font-size-2);
+        font-family: var(--font-family-default);
+    }
+}
+
+@layer layout {
+    .chat {
+        background-color: oklch(99% 0 287);
+        block-size: 55svb;
+        border-radius: var(--radius-3) var(--radius-3) 0px 0px;
+        border-width: 0;
+        box-shadow: var(--shadow-6);
+        inline-size: min(1028px, 100%);
+        inset-block-start: auto;
+        margin-inline: auto;
+        padding: 0;
+
+
+        /* --opacityOK  */
+        @media (prefers-reduced-transparency: no-preference) {
+            backdrop-filter: blur(70px);
+            background-color: oklch(99% 0 287/ 30%);
+        }
+
+        /* motionOK */
+        @media (prefers-reduced-motion: no-preference) {
+            animation: slide-out-down-dismiss 0.5s var(--ease-3);
+
+            &:popover-open {
+                /* Built-in animation from Open Props */
+                animation: var(--animation-slide-in-up);
+            }
+        }
+    }
+
+    @keyframes slide-out-down-dismiss {
+        from {
+            display: block;
+        }
+
+        to {
+            transform: translateY(100%);
+        }
+    }
+
+    .chat-content-wrapper {
+        display: grid;
+        grid-template-rows: min-content 1fr;
+        block-size: 100%;
+    }
+
+    .chat-header {
+        border-bottom: var(--border-size-1) solid var(--gray-4);
+        padding-block: 12px;
+        padding-inline: 12px;
+        display: grid;
+        place-items: center end;
+    }
+
+    .chat-popover-close-btn {
+        display: inline-grid;
+        place-items: center;
+        padding: 0;
+        border-width: 0;
+        block-size: 44px;
+        inline-size: 44px;
+        border-radius: var(--radius-round);
+        cursor: pointer;
+        background-color: var(--stone-2);
+    }
+
+    .chat-section {
+        display: grid;
+        grid-template-rows: 1fr min-content;
+        padding-block: var(--size-5);
+        padding-inline: var(--size-7);
+    }
+
+    .chat-input-container {
+        display: grid;
+        grid-template-columns: 1fr min-content;
+        box-shadow: var(--shadow-4);
+        border-radius: var(--radius-round);
+        background-color: white;
+        padding-inline: var(--size-px-4) var(--size-px-2);
+        block-size: 58px;
+        align-items: center;
+    }
+
+    .chat-textarea {
+        font-size: var(--font-size-2);
+        font-family: inherit;
+        caret-color: blue;
+        border-width: 0;
+        background-color: transparent;
+        outline-width: 0;
+        outline: none;
+        overflow: hidden;
+        resize: none;
+        block-size: var(--size-5);
+    }
+
+    .chat-submit-btn {
+        color: blue;
+        block-size: var(--size-px-8);
+        inline-size: var(--size-px-8);
+        border-width: 0;
+        border-radius: var(--radius-round);
+        background-color: transparent;
+        cursor: pointer;
+    }
+}
+
+@layer components {
+    .btn {
+        --_state-layer-op: 0%;
+        --_state-layer-bg: oklch(1 0 0 / var(--_state-layer-op));
+        background-color: transparent;
+        font-weight: var(--font-weight-6);
+        font-size: var(--font-size-1);
+        font-family: var(--font-family-default);
+        min-block-size: 40px;
+        text-decoration: none;
+        text-align: center;
+        min-inline-size: max-content;
+        display: inline-grid;
+        place-items: center;
+        border-radius: var(--radius-4);
+        overflow: clip;
+        isolation: isolate;
+        -moz-user-select: none;
+        -webkit-user-select: none;
+        cursor: pointer;
+        user-select: none;
+        white-space: nowrap;
+        padding: 0;
+        border-width: 0;
+
+        &:hover {
+            --_state-layer-op: 20%;
+            box-shadow: var(--shadow-2);
+        }
+
+        &:is(:active, :disabled, :focus-within) {
+            --_state-layer-op: 12%;
+        }
+
+        &.filled {
+            background-color: var(--gray-12);
+            color: white;
+        }
+
+        &.primary {
+            --_state-layer-bg: oklch(0 0 0 / var(--_state-layer-op));
+            background-color: var(--primary);
+        }
+
+        .state-layer {
+            border-radius: inherit;
+            padding-block: 12px;
+            padding-inline: var(--size-3);
+            inline-size: 100%;
+            display: inline-grid;
+            place-items: center;
+            background-color: var(--_state-layer-bg);
+            transition-property: background-color, box-shadow;
+            transition-duration: 0.2s;
+            transition-timing-function: var(--ease-3);
+        }
+    }
+}
+
+.cap-element {
+  text-transform: uppercase;
+}
+
+
+.footersome {
+  padding: 60px 40px 10px 40px;
+  color: #1e1e1e;
+  font-size: 20px;
+  text-align: center;
+  font-family: 'Source Sans Pro', sans-serif;
+}
+
+.text-lnk {
+  padding: 10px;
+  color: #1e1e1e;
+  font-size: 20px;
+  text-align: center;
+}
+
+.footersome a {
+  margin-right: 10px;
+  text-decoration: none;
+  color: inherit;
+}
+
+.a-no-dec {
+  text-decoration: none;
+}
+
+
+/* Initially hide the element */
+/* .slots-content {
+  display: none;
+  opacity: 0;
+  transform: translateY(-20px);
+} */
+
+/* Styles applied when the ID matches the URL fragment (#slotsElement) */
+/* Show the element */
+/* Trigger the animation */
+/* #slotsElement:target {
+  display: block; 
+  animation: slideIn 0.5s forwards; 
+} */
+
+/* Define the animation */
+/* @keyframes slideIn {
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+} */
+
+
+
+/* Hide the checkbox as usual */
+.hidden-checkpoint { display: none; }
+
+/* The "Magic" Selector: 
+   Find the checkbox, then find the 'main' sibling, 
+   then find 'myElement' inside it. */
+#toggle-element:checked ~ main #slotsElement {
+  opacity: 1;
+  visibility: visible;
+  display: block; 
+  transform: translateY(0);
+}
+
+/* Base styles for the hidden element */
+.slots-content{
+  opacity: 0;
+  visibility: hidden;
+  display: none; 
+  transform: translateY(-20px);
+  transition: all 0.5s ease;
+}
+
+/* Optional: Style the label to look like a button */
+.button {
+  display: inline-block;
+  padding: 10px 20px;
+  background: #4263eb;
+  color: white;
+  cursor: pointer;
+  border-radius: 22px;
+}
+
+/* .button-a-primary{ & .state-layer{border-radius:inherit;padding-block:12px;padding-inline:var(--size-3);inline-size: 100%;display: inline-grid;place-items: center;background-color: var(--_state-layer-bg);transition-property: background-color, box-shadow;transition-duration: 0.2s;transition-timing-function: var(--ease-3);}} */
+
+/* Hide the checkbox but keep it in the DOM for the anchor to find */
+.state-toggle {
+  position: absolute;
+  opacity: 0;
+}
+
+/* Base state for content */
+.content {
+  opacity: 0;
+  visibility: hidden;
+  transition: opacity 0.5s;
+}
+
+/* MAGIC: When the checkbox is checked, show the NEXT sibling (.content) */
+.state-toggle:checked + .content {
+  opacity: 1;
+  visibility: visible;
+}
+
+/* Optional: Make the button look nice */
+.button {
+  display: inline-block;
+  padding: 10px 20px;
+  background: blue;
+  color: white;
+  text-decoration: none;
+}
+
+
+----------
+
+
+/* Enable smooth scrolling for the whole page */
+html {
+  scroll-behavior: smooth;
+}
+
+/* Hide target sections by default */
+.reveal-section {
+  display: none; 
+  opacity: 0;
+  transform: translateY(20px);
+  transition: opacity 0.6s ease, transform 0.6s ease;
+}
+
+/* This class is added by JS */
+.reveal-section.active {
+  display: block; /* Switch to block first */
+}
+
+/* A tiny delay for the animation to kick in after display:block */
+.reveal-section.visible {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+/* Basic button styling to ensure NO dead zones */
+.nav-btn, .toggle-btn {
+  cursor: pointer;
+  display: inline-block;
+  padding: 10px 20px;
+  border: none;
+  background: #2196F3;
+  color: white;
+}
+
+.nav-btn-l{
+    cursor: pointer;
+  display: inline-block;
+  padding: 10px 20px;
+  border: none;
+  background: #2196F3;
+  color: white;
+  border-radius: 9999;
+    background-color: var(--primary);
+}
+
+.icon-social-gh {
+  display: inline-block;
+  width: 24px;
+  height: 24px;
+  background-image: url('../../static/icon/logo_gh.svg');  /* Or icon.svg */
+  background-size: contain;
+  background-repeat: no-repeat;
+  background-position: center;
+}
+
+.icon-social-cp{
+  display: inline-block;
+  width: 24px;
+  height: 24px;
+  background-image: url('../../static/icon/logo_cp.svg');  /* Or icon.svg */
+  background-size: contain;
+  background-repeat: no-repeat;
+  background-position: center;
+}
+.icon-social-hf {
+  display: inline-block;
+  width: 24px;
+  height: 24px;
+  background-image: url('../../static/icon/logo_hf.svg');  /* Or icon.svg */
+  background-size: contain;
+  background-repeat: no-repeat;
+  background-position: center;
+}
+.icon-social-bs {
+  display: inline-block;
+  width: 24px;
+  height: 24px;
+  background-image: url('../../static/icon/logo_bs.svg');  /* Or icon.svg */
+  background-size: contain;
+  background-repeat: no-repeat;
+  background-position: center;
+}
+
+
+/* The container starts hidden and transparent */
+#about, #contact {
+    display: none;
+    opacity: 0;
+    transform: translateY(10px);
+    transition: opacity 0.6s ease, transform 0.6s ease;
+}
+
+/* 'active' makes it exist in the DOM (display: block) */
+#about.active, #contact.active {
+    display: block;
+}
+
+/* 'visible' triggers the actual animation */
+#about.visible, #contact.visible {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+.latest-layout {
+  display: grid;
+  grid-template-columns: 1fr 300px; /* Main content + 300px Sidebar */
+  gap: 2rem;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+@media (max-width: 768px) {
+  .latest-layout {
+    grid-template-columns: 1fr; /* Stack them on mobile */
+  }
+}
+

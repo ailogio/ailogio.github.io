@@ -1,131 +1,119 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Homepage</title>
-    <style>
-        /* CSS STYLES */
-        html { scroll-behavior: smooth; font-family: sans-serif; }
-        body { margin: 0; padding-top: 60px; line-height: 1.6; color: #333; }
-        
-        /* Navigation */
-        .w3-top { position: fixed; top: 0; width: 100%; z-index: 1000; box-shadow: 0 2px 5px rgba(0,0,0,0.1); }
-        .w3-bar { background: #fff; display: flex; padding: 10px; }
-        .nav-btn { padding: 8px 16px; text-decoration: none; color: #007bff; font-weight: bold; cursor: pointer; }
-
-        /* Sections */
-        section { padding: 60px 20px; border-bottom: 1px solid #eee; min-height: 300px; }
-        
-        /* Hidden Content Base State */
-        .reveal-section { 
-            display: none; opacity: 0; 
-            transform: translateY(20px); 
-            transition: all 0.6s ease-out; 
-            padding: 20px; background: #f9f9f9; border-left: 5px solid #007bff; margin-top: 20px;
-        }
-        .reveal-section.active { display: block; }
-        .reveal-section.visible { opacity: 1; transform: translateY(0); }
-
-        /* Buttons & Honeypot */
-        .toggle-btn { background: #007bff; color: white; border: none; padding: 12px 24px; border-radius: 4px; cursor: pointer; font-size: 1rem; }
-        .toggle-btn:hover { background: #0056b3; }
-        .honey-trap { display: none !important; }
-    </style>
+  <title>Alogio</title>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="robots" content="index, follow" />
+  <link rel="icon shortcut" href="static/assets/logo.svg" sizes="32x32" />
+  <link rel="alternate icon" class="js-site-favicon" type="image/png" href="static/assets/logo.svg">
+  <link rel="icon" class="js-site-favicon" type="image/svg+xml" href="static/assets/logo.svg">
+  <link rel="icon" href="static/assets/logo.svg" type="image/svg+xml" media="(prefers-color-scheme: dark)" />
+  <link rel="icon" href="static/assets/logo.svg" type="image/png" sizes="16x16" />
+  <link rel="icon" href="static/assets/logo.svg" type="image/png" sizes="32x32" />
+  <link rel="apple-touch-icon" href="static/assets/apple-touch-icon.png" sizes="180x180" />
+  <link rel="stylesheet" href="static/css/style.css">
+  <link rel="stylesheet" href="static/css/style_sblock.css">
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Lato">
 </head>
 <body>
-
-<nav class="w3-top">
-    <div class="w3-bar">
-        <!-- Navigation using data-target to trigger the same logic -->
-        <a class="nav-btn" data-target="el1">Element 1</a>
-        <a class="nav-btn" data-target="el2">Element 2</a>
-        <a class="nav-btn" data-target="el3">Element 3</a>
-        <a class="nav-btn" data-target="el4">Element 4</a>
-    </div>
+<input type="checkbox" id="toggle-element" class="hidden-checkpoint">
+<nav id="menu-container">
+<div id="menu-container2">Loading menu...</div>
 </nav>
 
-<section id="intro">
-    <h1>Welcome to our  Site</h1>
-    <p>Scroll down or use the menu to reveal  content.</p>
+ 
+
+ 
+<main class="main-content">
+<div id="app">
+ 
+</div>
+</main>
+
+ 
+<footer class="w3-container w3-padding-64 w3-center w3-light-grey w3-xlarge footersome site-footer">
+
+  <p class="w3-medium w3-padding-16">© 2026 <a href="https://ailogio.github.io" target="_blank">ailogio.github.io</a></p>
+</footer>
+
+
+<section>
+        <div popover id="chat-popover" class="chat">
+        <div class="chat-content-wrapper">
+          <header class="chat-header">
+            <button
+              popovertarget="chat-popover"
+              popovertargetaction="hide"
+              class="chat-popover-close-btn"
+              aria-label="Close Chat"
+              title="Close Chat"
+            >
+              <svg
+                xmlns="http://www.w3.org/2000/svg"
+                viewBox="0 0 24 24"
+                width="24"
+                height="24"
+                fill="currentColor"
+                aria-hidden="true"
+              >
+                <path
+                  d="M11.9997 10.5865L16.9495 5.63672L18.3637 7.05093L13.4139 12.0007L18.3637 16.9504L16.9495 18.3646L11.9997 13.4149L7.04996 18.3646L5.63574 16.9504L10.5855 12.0007L5.63574 7.05093L7.04996 5.63672L11.9997 10.5865Z"
+                ></path>
+              </svg>
+            </button>
+          </header>
+
+          <section class="chat-section">
+            <div class="result"></div>
+            <form action="">
+              <div class="chat-input-container">
+                <textarea
+                  autofocus
+                  class="chat-textarea"
+                  placeholder="Ask me anything"
+                  type="text"
+                ></textarea>
+                <button
+                  type="submit"
+                  class="chat-submit-btn"
+                  aria-label="Chat Submit"
+                  title="Chat Submit"
+                >
+                  <svg
+                    width="24"
+                    height="24"
+                    viewBox="0 0 24 24"
+                    fill="currentColor"
+                    xmlns="http://www.w3.org/2000/svg"
+                    aria-hidden="true"
+                  >
+                    <g clip-path="url(#clip0_208_691)">
+                      <path
+                        d="M2.5664 3.26059C2.32007 2.76794 2.51587 2.5663 3.02256 2.81964L21.0172 11.8169C21.5155 12.0661 21.5206 12.4896 21.0494 12.7513L3.69739 22.3914C3.21698 22.6582 2.98859 22.4559 3.18594 21.9427L6.36304 13.6822L16.2625 12.268L6.36306 10.8538L2.5664 3.26059Z"
+                      />
+                    </g>
+                    <defs>
+                      <clipPath id="clip0_208_691">
+                        <rect width="24" height="24" fill="white" />
+                      </clipPath>
+                    </defs>
+                  </svg>
+                </button>
+              </div>
+            </form>
+          </section>
+        </div>
+      </div>
 </section>
 
-<!-- Example Hidden Section 1 -->
-<section id="el1">
-    <h2>Main Section 1</h2>
-    <div class="honey-trap" aria-hidden="true"><input type="text" tabindex="-1" autocomplete="off"></div>
-    <button class="toggle-btn" data-target="sub-el1" data-path="Y29udGVudC9zdWItZWwzLmh0bWw=">Show content 1</button>
-    <div id="sub-el1" class="reveal-section"></div>
-</section>
-
-<!-- Example Hidden Section 2 -->
-<section id="el2">
-    <h2>Main Section 2</h2>
-    <div class="honey-trap" aria-hidden="true"><input type="text" tabindex="-1" autocomplete="off"></div>
-    <button class="toggle-btn" data-target="sub-el2" data-path="Y29udGVudC9zdWItZWwzLmh0bWw=">Show content 2</button>
-    <div id="sub-el2" class="reveal-section"></div>
-</section>
-
-<script>
-    // JAVASCRIPT LOGIC
-    const PAGE_START = Date.now();
-
-    // 1. Core Reveal Function
-    async function revealContent(btn) {
-        const targetId = btn.getAttribute('data-target');
-        const targetEl = document.getElementById(targetId);
-        const encodedPath = btn.getAttribute('data-path');
-
-        // Bot Checks
-        const trap = btn.parentElement.querySelector('.honey-trap input');
-        if (trap && trap.value !== "") return; // Honeypot fail
-        if (Date.now() - PAGE_START < 1000) return; // Timing fail (1s)
-
-        if (targetEl && encodedPath) {
-            // Load content if empty
-            if (targetEl.innerHTML.trim() === "") {
-                try {
-                    const path = atob(encodedPath);
-                    const res = await fetch(path);
-                    const base64Content = await res.text();
-                    // Decode Unicode-safe: handle emojis/special chars
-                    targetEl.innerHTML = decodeURIComponent(escape(atob(base64Content.trim())));
-                } catch (e) {
-                    targetEl.innerHTML = "Error loading content.";
-                }
-            }
-
-            // Animate Toggle
-            const isVisible = targetEl.classList.contains('visible');
-            if (!isVisible) {
-                targetEl.classList.add('active');
-                requestAnimationFrame(() => targetEl.classList.add('visible'));
-                targetEl.scrollIntoView({ behavior: 'smooth', block: 'start' });
-            } else {
-                targetEl.classList.remove('visible');
-                setTimeout(() => targetEl.classList.remove('active'), 600);
-            }
-        }
-    }
-
-    // 2. Click Event Listener
-    document.addEventListener('click', (e) => {
-        const btn = e.target.closest('[data-target]');
-        if (btn) revealContent(btn);
-    });
-
-    // 3. Deep Linking Logic (Handling ?show=ID from other pages)
-    window.addEventListener('DOMContentLoaded', () => {
-        const urlParams = new URLSearchParams(window.location.search);
-        const autoOpen = urlParams.get('show');
-        if (autoOpen) {
-            const btn = document.querySelector(`[data-target="${autoOpen}"]`);
-            if (btn) setTimeout(() => btn.click(), 500);
-            // Clean URL after opening
-            window.history.replaceState({}, document.title, window.location.pathname);
-        }
-    });
-</script>
+<script src="static/js/router.js"></script>
+<script>const PLNG = "DE";</script>
+<script defer="defer" src="static/js/script.js" ></script>
 
 </body>
 </html>
+
+
+
+

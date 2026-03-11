@@ -1,0 +1,245 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <title>Alogio</title>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="robots" content="index, follow" />
+  <link rel="icon shortcut" href="static/assets/logo.svg" sizes="32x32" />
+  <link rel="alternate icon" class="js-site-favicon" type="image/png" href="static/assets/logo.svg">
+  <link rel="icon" class="js-site-favicon" type="image/svg+xml" href="static/assets/logo.svg">
+  <link rel="icon" href="static/assets/logo.svg" type="image/svg+xml" media="(prefers-color-scheme: dark)" />
+  <link rel="icon" href="static/assets/logo.svg" type="image/png" sizes="16x16" />
+  <link rel="icon" href="static/assets/logo.svg" type="image/png" sizes="32x32" />
+  <link rel="apple-touch-icon" href="static/assets/apple-touch-icon.png" sizes="180x180" />
+  <link rel="stylesheet" href="static/css/style.css">
+  <link rel="stylesheet" href="static/css/style_sblock.css">
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Lato">
+  <!-- <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css"> -->
+
+<!-- <script type="text/javascript">
+    (function(l) {
+      if (l.search[1] === '/' ) {
+        var decoded = l.search.slice(1).split('&').map(function(s) { 
+          return s.replace(/~and~/g, '&') 
+        }).join('?');
+        window.history.replaceState(null, null,
+            l.pathname.slice(0, -1) + decoded + l.hash
+        );
+      }
+    }(window.location));
+
+  </script> -->
+
+  <script>
+    // At the top of index.html
+(function() {
+  const redirect = sessionStorage.redirect;
+  delete sessionStorage.redirect;
+  if (redirect && redirect !== location.href) {
+    history.replaceState(null, null, redirect);
+  }
+})();
+
+  </script>
+
+</head>
+<body>
+<input type="checkbox" id="toggle-element" class="hidden-checkpoint">
+<nav id="menu-container">
+<div id="menu-container2">Loading menu...</div>
+</nav>
+
+ 
+
+ 
+<main class="main-content">
+<div id="app">
+ 
+</div>
+</main>
+
+  <!--
+<nav>
+
+
+ <a href="#/">Home</a>
+  <a href="#/en/latest">Latest (EN)</a>
+  <a href="#/it/post/hello-world">Sample Post</a>
+</nav>
+ <div id="app"></div> -->
+
+
+
+<!-- The Content: Just a div nearby -->
+<!-- <div id="myElement2">
+  <div class="content">
+  I am the content!
+</div>
+</div> -->
+
+
+
+
+ <!-- We use data-target to tell JS which ID to open -->
+<!-- <nav>
+  <div class="w3-top">
+    <div class="w3-bar w3-white">
+     
+      <a href="javascript:void(0)" class="nav-btn" data-target="sectionSlots">El 1</a>
+      <a href="javascript:void(0)" class="nav-btn" data-target="el2">El 2</a>
+      <a href="javascript:void(0)" class="nav-btn" data-target="el3">El 3</a>
+      <a href="javascript:void(0)" class="nav-btn" data-target="el4">El 4</a>
+    </div>
+  </div>
+</nav> -->
+
+<!-- Sections that are hidden by default -->
+<!-- <section id="el1" class="reveal-section">SMTH Content 1</section>
+<section id="el2" class="reveal-section">SMTH Content 2</section> -->
+
+  <!-- Toggle for Sub-Element -->
+<!-- <section id="other-section3"> 
+  <p>Main Section 3 content...</p>
+  
+
+  <button class="toggle-btn" data-target="sub-el1">Show Sub 1</button>
+  <div id="sub-el1" class="reveal-section sub-content">Hidden Sub-SMTH 1</div>
+
+  <button class="toggle-btn" data-target="sub-el2">Show Sub 2</button>
+  <div id="sub-el2" class="reveal-section sub-content">Hidden Sub-SMTH 2</div>
+</section>
+
+<section id="el3" class="reveal-section">
+   <p>Main Section 3...</p>
+   <button class="toggle-btn" data-target="sub-el3">Show Sub 3</button>
+   <div id="sub-el3" class="reveal-section sub-content">Hidden Sub-SMTH 3</div>
+</section> -->
+
+
+
+ <!-- <div style="margin-bottom: 20px;">
+        <label for="lang-select">Language: </label>
+        <select id="lang-select">
+            <option value="en">English</option>
+            <option value="de">Deutsch</option>
+        </select>
+    </div> -->
+
+<!-- Footer -->
+<!-- <footer class="w3-container w3-padding-64 w3-center w3-opacity w3-light-grey w3-xlarge footersome site-footer"> -->
+<footer class="w3-container w3-padding-64 w3-center w3-light-grey w3-xlarge footersome site-footer">
+
+
+    <!-- <a target="_blank" href="https://www.x.com//" title="Ailogio AI on Facebook"><i class="fa">
+      <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"><g fill="currentColor"><path d="M1 2h2.5L3.5 2h-2.5zM5.5 2h2.5L7.2 2h-2.5z"><animate fill="freeze" attributeName="d" dur="0.4s" values="M1 2h2.5L3.5 2h-2.5zM5.5 2h2.5L7.2 2h-2.5z;M1 2h2.5L18.5 22h-2.5zM5.5 2h2.5L23 22h-2.5z"></animate></path><path d="M3 2h5v0h-5zM16 22h5v0h-5z"><animate fill="freeze" attributeName="d" begin="0.4s" dur="0.4s" values="M3 2h5v0h-5zM16 22h5v0h-5z;M3 2h5v2h-5zM16 22h5v-2h-5z"></animate></path><path d="M18.5 2h3.5L22 2h-3.5z"><animate fill="freeze" attributeName="d" begin="0.5s" dur="0.4s" values="M18.5 2h3.5L22 2h-3.5z;M18.5 2h3.5L5 22h-3.5z"></animate></path></g></svg>
+    </i></a>
+
+  <a target="_blank" href="https://www.instagram.com//" title="Ailogio AI on Instagram"><i class="fa">
+    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"><circle cx="17" cy="7" r="1.5" fill="currentColor" fill-opacity="0"><animate fill="freeze" attributeName="fill-opacity" begin="1.3s" dur="0.15s" values="0;1"></animate></circle><g fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"><path stroke-dasharray="72" stroke-dashoffset="72" d="M16 3c2.76 0 5 2.24 5 5v8c0 2.76 -2.24 5 -5 5h-8c-2.76 0 -5 -2.24 -5 -5v-8c0 -2.76 2.24 -5 5 -5h4Z"><animate fill="freeze" attributeName="stroke-dashoffset" dur="0.6s" values="72;0"></animate></path><path stroke-dasharray="28" stroke-dashoffset="28" d="M12 8c2.21 0 4 1.79 4 4c0 2.21 -1.79 4 -4 4c-2.21 0 -4 -1.79 -4 -4c0 -2.21 1.79 -4 4 -4"><animate fill="freeze" attributeName="stroke-dashoffset" begin="0.7s" dur="0.6s" values="28;0"></animate></path></g></svg>
+  </i></a> -->
+
+
+<!--  
+  <i class="fa fa-facebook-official w3-hover-opacity w3-padding-lr-8"></i>
+  <i class="fa fa-instagram w3-hover-opacity w3-padding-lr-8"></i>
+  <i class="fa fa-snapchat w3-hover-opacity w3-padding-lr-8"></i>
+  <i class="fa fa-pinterest-p w3-hover-opacity w3-padding-lr-8"></i>
+  <i class="fa fa-twitter w3-hover-opacity w3-padding-lr-8"></i>
+  <i class="fa fa-linkedin w3-hover-opacity w3-padding-lr-8"></i> -->
+
+<!-- <p class="w3-medium w3-padding-16"></p>
+   <a target="_blank" href="/about" title="About Ailogio" class="text-lnk">ABOUT</a>
+  <a target="_blank" href="/business" title="Forum" class="text-lnk">FOR BUSINESS</a>
+  <a target="_blank" href="/contacts" title="Forum" class="text-lnk">CONTACTS</a> -->
+
+  <p class="w3-medium w3-padding-16">© 2026 <a href="https://ailogio.github.io" target="_blank">ailogio.github.io</a></p>
+</footer>
+
+
+<section>
+        <div popover id="chat-popover" class="chat">
+        <div class="chat-content-wrapper">
+          <header class="chat-header">
+            <button
+              popovertarget="chat-popover"
+              popovertargetaction="hide"
+              class="chat-popover-close-btn"
+              aria-label="Close Chat"
+              title="Close Chat"
+            >
+              <svg
+                xmlns="http://www.w3.org/2000/svg"
+                viewBox="0 0 24 24"
+                width="24"
+                height="24"
+                fill="currentColor"
+                aria-hidden="true"
+              >
+                <path
+                  d="M11.9997 10.5865L16.9495 5.63672L18.3637 7.05093L13.4139 12.0007L18.3637 16.9504L16.9495 18.3646L11.9997 13.4149L7.04996 18.3646L5.63574 16.9504L10.5855 12.0007L5.63574 7.05093L7.04996 5.63672L11.9997 10.5865Z"
+                ></path>
+              </svg>
+            </button>
+          </header>
+
+          <section class="chat-section">
+            <div class="result"></div>
+            <form action="">
+              <div class="chat-input-container">
+                <textarea
+                  autofocus
+                  class="chat-textarea"
+                  placeholder="Ask me anything"
+                  type="text"
+                ></textarea>
+                <button
+                  type="submit"
+                  class="chat-submit-btn"
+                  aria-label="Chat Submit"
+                  title="Chat Submit"
+                >
+                  <svg
+                    width="24"
+                    height="24"
+                    viewBox="0 0 24 24"
+                    fill="currentColor"
+                    xmlns="http://www.w3.org/2000/svg"
+                    aria-hidden="true"
+                  >
+                    <g clip-path="url(#clip0_208_691)">
+                      <path
+                        d="M2.5664 3.26059C2.32007 2.76794 2.51587 2.5663 3.02256 2.81964L21.0172 11.8169C21.5155 12.0661 21.5206 12.4896 21.0494 12.7513L3.69739 22.3914C3.21698 22.6582 2.98859 22.4559 3.18594 21.9427L6.36304 13.6822L16.2625 12.268L6.36306 10.8538L2.5664 3.26059Z"
+                      />
+                    </g>
+                    <defs>
+                      <clipPath id="clip0_208_691">
+                        <rect width="24" height="24" fill="white" />
+                      </clipPath>
+                    </defs>
+                  </svg>
+                </button>
+              </div>
+            </form>
+          </section>
+        </div>
+      </div>
+</section>
+
+
+<!-- <script src="static/js/sidebar.js"></script> -->
+<script src="static/js/router.js"></script>
+
+  <!-- <div id="slotsElement2" class="content">
+    I am in a different section but I still work!
+  </div> -->
+<script>const PLNG = "DE";</script>
+<!-- <script defer="defer" src="static/js/app.js" ></script> -->
+<script defer="defer" src="static/js/script.js" ></script>
+
+</body>
+</html>
+
+
+
+

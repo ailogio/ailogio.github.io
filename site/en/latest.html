@@ -1,0 +1,27 @@
+<h1> Latest </h1>
+<p>Content test</p>
+
+<div class="latest-layout">
+  <main id="main-content">
+    <!-- Main content goes here -->
+  </main>
+  <aside id="latest-sidebar">
+    <!-- List of 6 will be injected here -->
+  </aside>
+</div>
+
+<script>
+    console.log("Teeeest!")
+</script>
+
+<script src="static/js/sidebar.js"></script>
+
+<script>
+    // Inside your router's transition logic:
+render(html, postName); 
+if (hash.includes('latest')) {
+  renderLatestSidebar(); // Populate the sidebar only on this page
+}
+
+</script>
+
