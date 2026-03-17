@@ -22,9 +22,6 @@
 <div id="menu-container2">Loading menu...</div>
 </nav>
 
- 
-
- 
 <main class="main-content">
 <div id="app">
  
@@ -107,9 +104,41 @@
       </div>
 </section>
 
+<div id="cookie-banner" class="hidden">
+  <div class="content-cookie-banner">
+    <h3>We use cookies!</h3>
+    <p>This site uses <strong>essential</strong> cookies (always on), <strong>analytics</strong> (usage stats)<strong></strong>. 
+      </p>
+     <p><a href="/privacy">Privacy Policy</a> | <a href="/cookies">Cookie Policy </a></p>
+
+    <div class="toggles-cookie-banner">
+      <label><input type="checkbox" id="essential" checked disabled> Essential</label>
+      <label><input type="checkbox" id="analytics" checked> Analytics</label>
+      <label><input type="checkbox" id="marketing"> Marketing</label>
+    </div>
+    <button id="save">Save Preferences</button>
+    <button id="reject-all">Reject Non-Essential</button>
+  </div>
+</div>
+
+<a href="#" id="cookie-settings">
+        <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24">
+        <g fill="none">
+          <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5"
+            d="M17.076 10.535a2.75 2.75 0 0 0 3.89 0v0c.127-.128.362-.076.393.102a9.25 9.25 0 0 1-15.65 8.154a9.25 9.25 0 0 1 8.154-15.65c.178.031.23.266.102.394v0a2.75 2.75 0 0 0 2.333 4.667a2.75 2.75 0 0 0 .778 2.333" />
+          <circle cx="8.5" cy="15.5" r="1.25" fill="currentColor" />
+          <circle cx="7.5" cy="9.5" r="1.25" fill="currentColor" />
+          <circle cx="12.5" cy="12.5" r="1.25" fill="currentColor" />
+          <circle cx="15.5" cy="16.5" r="1.25" fill="currentColor" />
+        </g>
+      </svg>
+   Cookie Settings
+  </a>
+
 <script src="static/js/router.js"></script>
 <script>const PLNG = "DE";</script>
 <script defer="defer" src="static/js/script.js" ></script>
+<script defer="defer" src="static/js/cookies.js" ></script>
 
 </body>
 </html>
