@@ -1,0 +1,51 @@
+// Map your hash paths to the local HTML file paths
+const routes = {
+  'home': 'pages/home.html',
+  'it': 'pages/it-home.html',
+  'en/latest': 'pages/latest.html',
+  'it/latest': 'pages/latest-it.html',
+  'en/post': 'pages/post.html',
+  'it/post': 'pages/post.html',
+  '404': 'pages/404.html'
+};
+
+async function router() {
+  const hash = location.hash.slice(2) || 'home';
+  const parts = hash.split('/');
+  
+  let routePath = hash;
+  let postName = null;
+
+  // Handle dynamic post routes: en/post/<name> or it/post/<name>
+  if (parts.length === 3 && parts[1] === 'post') {
+    routePath = `${parts[0]}/post`; // e.g., 'en/post'
+    postName = parts[2];           // e.g., 'my-first-post'
+  }
+
+  const filePath = routes[routePath] || routes['404'];
+  
+  try {
+    const response = await fetch(filePath);
+    if (!response.ok) throw new Error('Page not found');
+    const html = await response.text();
+    
+    render(html, postName);
+  } catch (err) {
+    const errorPage = await fetch(routes['404']);
+    render(await errorPage.text());
+  }
+}
+
+function render(html, postName) {
+  const app = document.getElementById('app');
+  app.innerHTML = html;
+
+  // If this is a post page, find a placeholder to insert the name
+  if (postName) {
+    const titleElem = app.querySelector('#post-title');
+    if (titleElem) titleElem.textContent = postName.replace(/-/g, ' ');
+  }
+}
+
+window.addEventListener('hashchange', router);
+window.addEventListener('load', router);

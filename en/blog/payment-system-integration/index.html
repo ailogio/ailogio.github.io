@@ -1,0 +1,1340 @@
+<!doctype html>
+
+<html lang="en-US" class="no-js">
+  <head>
+    <meta charset="utf-8">
+
+<!-- begin _includes/seo.html --><title>From Cowrie to digital speeds - AILOGIO</title>
+<meta name="description" content="AI service as the Art of Anticipation: Redefining the Luxury Guest Journey.">
+
+
+  <meta name="author" content="Sergio Ottovini">
+  
+  <meta property="article:author" content="Sergio Ottovini">
+  
+
+
+<meta property="og:type" content="article">
+<meta property="og:locale" content="en_US">
+<meta property="og:site_name" content="AILOGIO">
+<meta property="og:title" content="From Cowrie to digital speeds">
+<meta property="og:url" content="http://localhost:4000/en/blog/payment-system-integration/">
+
+
+  <meta property="og:description" content="AI service as the Art of Anticipation: Redefining the Luxury Guest Journey.">
+
+
+
+  <meta property="og:image" content="http://localhost:4000/media/images/pinned/cowrie-coins.jpg">
+
+
+
+
+
+  <meta property="article:published_time" content="2026-03-14T01:00:00-07:00">
+
+
+
+
+
+  
+
+  
+
+
+<link rel="canonical" href="http://localhost:4000/en/blog/payment-system-integration/">
+
+
+
+
+
+
+
+
+
+
+
+
+<!-- end _includes/seo.html -->
+
+
+
+  <link href="/feed.xml" type="application/atom+xml" rel="alternate" title="AILOGIO Feed">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<script>
+  document.documentElement.className = document.documentElement.className.replace(/\bno-js\b/g, '') + ' js ';
+  window.enable_copy_code_button = true;
+</script>
+
+
+<link rel="apple-touch-icon" href="static/assets/apple-touch-icon.png" sizes="180x180" />
+<link rel="icon" href="/static/assets/logo.svg" type="image/x-icon">
+
+<!-- For all browsers -->
+<link rel="stylesheet" href="/assets/css/main.css">
+<link rel="stylesheet" href="/static/css/style.css">
+<link rel="stylesheet" href="/static/css/style_sblock.css">
+  
+<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Lato">
+
+<link rel="preload" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@latest/css/all.min.css" as="style" onload="this.onload=null;this.rel='stylesheet'">
+<noscript><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@latest/css/all.min.css"></noscript>
+
+
+
+
+  <script src="https://cdn.jsdelivr.net/npm/mermaid@11/dist/mermaid.min.js"></script>
+<script>
+document.addEventListener('DOMContentLoaded', function() {
+  mermaid.initialize({ startOnLoad: true });
+  await mermaid.run({
+    querySelector: '.language-mermaid',
+  });
+});
+</script>
+
+
+    <!-- start custom head snippets -->
+
+<!-- insert favicons. use https://realfavicongenerator.net/ -->
+
+<!-- end custom head snippets -->
+
+    
+<!-- 
+    <script type="module">
+  import mermaid from 'https://cdn.jsdelivr.net/npm/mermaid@11/dist/mermaid.esm.min.mjs';
+  document.addEventListener("DOMContentLoaded", function() {
+    mermaid.initialize({ startOnLoad: true });
+    mermaid.run({ querySelector: '.language-mermaid' });
+  });
+</script> -->
+
+
+  </head>
+
+  <body class="layout--post" dir="ltr">
+
+
+     <!-- include_cached skip-links.html 
+     include_cached masthead.html  -->
+
+
+<!-- ---------------- -->
+
+
+<input type="checkbox" id="toggle-element" class="hidden-checkpoint">
+<nav id="menu-container">
+<div id="menu-container2">Loading menu...</div>
+</nav>
+
+ 
+
+ 
+<main class="main-content">
+<!-- <div id="app">
+ 
+</div>     -->
+
+<!-- layout: default -->
+
+
+  
+
+
+
+
+
+
+
+<div class="page__hero"
+  style=" background-image: url('');"
+>
+  
+    <img src="/media/images/pinned/cowrie-coins.jpg" alt="A description of the image" class="page__hero-image">
+  
+  
+</div>
+
+
+
+
+
+
+  
+    
+
+
+
+<nav class="breadcrumbs">
+  <ol itemscope itemtype="https://schema.org/BreadcrumbList">
+    
+    
+    
+      
+        <li itemprop="itemListElement" itemscope itemtype="https://schema.org/ListItem">
+          <a href="/" itemprop="item"><span itemprop="name">Home</span></a>
+
+          <meta itemprop="position" content="1" />
+        </li>
+        <span class="sep">/</span>
+      
+      
+        
+        <li itemprop="itemListElement" itemscope itemtype="https://schema.org/ListItem">
+          <a href="/categories/#en" itemprop="item"><span itemprop="name">En</span></a>
+          <meta itemprop="position" content="2" />
+        </li>
+        <span class="sep">/</span>
+      
+    
+      
+      
+        
+        <li itemprop="itemListElement" itemscope itemtype="https://schema.org/ListItem">
+          <a href="/categories/#blog" itemprop="item"><span itemprop="name">Blog</span></a>
+          <meta itemprop="position" content="3" />
+        </li>
+        <span class="sep">/</span>
+      
+    
+      
+      
+        <li class="current">From Cowrie to digital speeds</li>
+      
+    
+  </ol>
+</nav>
+
+  
+
+
+<div id="main" role="main">
+   
+  <aside class="sidebar sticky">
+    <nav class="toc">
+      <header>
+        <h4 class="nav__title">
+          <i class="fas fa-file-alt"></i>
+            On this page
+          </h4>
+        </header>
+      <ul class="toc__menu"><li><a href="#the-three-categories-of-payment-architecture">The Three Categories of Payment Architecture.</a></li><li><a href="#category-1">Category 1:</a><ul><li><a href="#entry-level-integration-the-quick--fixed-setup-with-the-low-code-script-the-simple-approach">Entry-Level Integration (The Quick &amp; Fixed Setup) with the “Low-Code” Script (The Simple Approach)</a></li></ul></li><li><a href="#category-2">Category 2:</a><ul><li><a href="#mid-tier-integration-the-managed--automated-workflow-backend-driven--hosted-checkout-the-smart-hybrid">Mid-Tier Integration (The Managed &amp; Automated Workflow) Backend-Driven / Hosted Checkout (The Smart Hybrid)</a></li></ul></li><li><a href="#category-3">Category 3:</a><ul><li><a href="#advanced-integration-the-dynamic--high-security-engine-full-custom-api-integration">Advanced Integration (The Dynamic &amp; High-Security Engine) Full Custom API Integration</a></li></ul></li><li><a href="#scope-of-work-by-categories">Scope of work by categories</a></li><li><a href="#timeframe-in-calendar-days">Timeframe in (Calendar days)</a></li><li><a href="#the-cost-of-complexity">The Cost of Complexity</a></li><li><a href="#website-builder-platforms">Website builder platforms</a></li><li><a href="#3-critical-cost-drivers-hidden-agency-fees">3. Critical Cost Drivers (Hidden Agency Fees)</a></li><li><a href="#how-to-decide-on-a-category">How to decide on a category</a><ul><li><a href="#start-with-category-1-pros">Start with Category 1 (Pros)</a></li><li><a href="#final-recommendation">Final Recommendation</a></li></ul></li><li><a href="#conclusions">Conclusions</a></li></ul>
+    </nav>
+  </aside>
+
+
+<!-- Side bar -->
+  <article class="page" itemscope itemtype="https://schema.org/CreativeWork">
+    <meta itemprop="headline" content="From Cowrie to digital speeds">
+    <meta itemprop="description" content="AI service as the Art of Anticipation: Redefining the Luxury Guest Journey.">
+    <meta itemprop="datePublished" content="2026-03-14T01:00:00-07:00">
+    
+
+    <div class="page__inner-wrap">
+      
+        <header>
+          <h1 id="page-title" class="page__title" itemprop="headline">
+            <a href="http://localhost:4000/en/blog/payment-system-integration/" itemprop="url">From Cowrie to digital speeds
+</a>
+          </h1>
+          
+
+  <p class="page__meta">
+    
+
+    
+
+    
+      
+      
+
+      <span class="page__meta-readtime">
+        <i class="far fa-clock" aria-hidden="true"></i>
+        
+          18 minute read
+        
+      </span>
+    
+  </p>
+
+
+        </header>
+      
+
+      <section class="page__content" itemprop="text">
+
+
+       
+          <script>
+    mermaid.initialize({ startOnLoad: true });
+  </script>
+
+
+<div class="hgp">  </div>
+<div class="w3-content">
+  <p>In <strong>Ancient Times (circa 2000–1200 BCE)</strong>, commerce looked vastly different than it does today. During the late Neolithic period, merchants exchanged natural <strong>Cowrie shells</strong> to trade goods and secure lodging. Archaeologists have uncovered bronze and bone replicas of these shells in ancient tombs, confirming their role as humanity’s first standardized medium of exchange.</p>
+
+<p>Fast forward to the modern era, and the core concept of trade remains the same, but the execution has transformed completely. Today, a guest checks out of a boutique hotel or pays for a service with a tap, a voice, or a glance. Settlements happen via automated, invisible processes. Offers are generated, purchases are verified, and ledger systems sync instantly—all without a single human intervention.</p>
+
+<p><strong>For business owners</strong> in the hospitality, restoration, and service industries, friction in this invisible layer means lost revenue. If you are exploring how to modernize your platform’s payment architecture, navigating the technical landscape can feel overwhelming.</p>
+
+<p>If you are ready to look beyond the surface and understand the true complexity of modern integration possibilities, this guide provides a framework for understanding today’s leading variations. We break down these integrations into three logical <strong>complexity tiers</strong>, offering a clear perspective on how systems are built and scaled and Payment Integration Strategy Comparison.</p>
+
+<p><br /><br /></p>
+
+<h2 id="the-three-categories-of-payment-architecture">The Three Categories of Payment Architecture.</h2>
+<p>What You Need to Know Before Building Your Ordering or Booking System.</p>
+
+<p><strong>By [Sergio Ottovini], Founder of [ Ailogio Agency]</strong></p>
+
+<p>I often meet with restaurant owners and hotel managers who want a new online booking or ordering system. They look at the flashy demo pages I show them and ask the same question: <em>“Which payment processor should we choose?”</em></p>
+
+<p>With outline indications of:
+<a href="#category1"><strong>options</strong></a> , <a href="#timeframe"><strong>timeframe</strong></a>,  <a href="#cost"><strong>cost</strong></a></p>
+
+<p>Usually, they think of this as a simple choice “between couple popular leading digital payment Platforms / Providers and couple (Ready-2-Use  Frontend Plug-and-play) and (Light Hosted Checkout middleware) solutions.” But when I dive into the architecture behind the curtain, it gets much more interesting—and slightly more complex.</p>
+
+<p>Ideally, it would be good to start from accepted standards and I would suggest -</p>
+
+<ul>
+  <li>
+    <p><em>Let’s consider the “Compliance” aspect.</em></p>
+  </li>
+  <li>
+    <table>
+      <tbody>
+        <tr>
+          <td><a href="#category1"><strong>Category 1</strong></a> ≈</td>
+          <td>Level 1 ≈≈</td>
+          <td>Low-Code Script.</td>
+          <td>PCI-SSC Qualified.</td>
+        </tr>
+      </tbody>
+    </table>
+  </li>
+  <li>
+    <table>
+      <tbody>
+        <tr>
+          <td><a href="#category2"><strong>Category 2</strong></a> ≈</td>
+          <td>Level 2 ≈≈</td>
+          <td>Hosted Checkout.</td>
+          <td>PCI-SSQ or SAQ-A.</td>
+        </tr>
+      </tbody>
+    </table>
+  </li>
+  <li>
+    <table>
+      <tbody>
+        <tr>
+          <td><a href="#category3"><strong>Category 3</strong></a> ≈</td>
+          <td>Level 3 ≈≈</td>
+          <td>Custom Backend.</td>
+          <td>Full PCI DSS compliance required.</td>
+        </tr>
+      </tbody>
+    </table>
+  </li>
+</ul>
+
+<p><br /></p>
+
+<p>But, instead of tormenting you with the complex legalities of global compliance standards—such as PCI-SSC Qualified platforms versus full on-host PCI DSS Compliance—let’s look at this from a purely operational perspective. 
+<br />I suggest meet them as needed later.</p>
+
+<p>To make a fundamental decision at start, it is necessary just to ensure that you understand the requirements for the <strong>payment module in terms of achieving business objectives by their purposes (next PURPOSES)</strong>.</p>
+
+<p>So, in the software world we live in, there isn’t just one way to take credit card payments. Depending on how you want your system to look and behave, we generally categorize payment integration into three distinct layers based on business logic and its purpose and its Category, taking into account the complexity and duration of implementation.</p>
+
+<p>Understanding these layers is not just a developer conversation; it dictates your cost, your security risk, and—most importantly for your guests—their experience when paying.</p>
+
+<p>Here is the inside track on the three levels of payment integration, specifically for hospitality services.</p>
+
+<p>To choose the right payment infrastructure, you simply need to match your business goals with the right <strong>Category</strong> and level of complexity. Here is what each category looks like in practice:</p>
+
+<div id="category1"></div>
+
+<p><br /></p>
+
+<h2 id="category-1">Category 1:</h2>
+
+<h3 id="entry-level-integration-the-quick--fixed-setup-with-the-low-code-script-the-simple-approach">Entry-Level Integration (The Quick &amp; Fixed Setup) with the “Low-Code” Script (The Simple Approach)</h3>
+<p>Ideal for small-scale operations, single-service restoration contractors, or boutique guest houses looking to launch immediately without upfront development complexity.</p>
+
+<p><strong>PURPOSES and options</strong></p>
+
+<ul>
+  <li><strong>Quick start.</strong>
+    <blockquote>
+      <p>Quick Start: Getting up and running in a matter of days using out-of-the-box payment buttons or hosted checkout pages.</p>
+    </blockquote>
+  </li>
+  <li><strong>Process just fixed prices.</strong>
+    <blockquote>
+      <p>Process Fixed Prices: Handling simple, unchanging fees—such as a standard $150 flat-rate inspection fee or a fixed deposit amount.</p>
+    </blockquote>
+  </li>
+  <li><strong>Low limited totals.</strong>
+    <blockquote>
+      <p>Low Limited Totals: Best suited for businesses with lower monthly transaction volumes or lower maximum limits per checkout session.</p>
+    </blockquote>
+  </li>
+</ul>
+
+<p><em>Think of this as placing a sign in the window vs. building a storefront.</em></p>
+
+<p><br />
+This is the entry point most SaaS platforms offer. It involves a small snippet of JavaScript code that you paste into your website. When a guest clicks “Pay,” they enter their details directly on a form hosted by you (or a wrapper).</p>
+
+<p><strong>What it looks like:</strong>
+Your website stays in full control. The data enters the fields directly on your page.</p>
+
+<p><strong>The Pros &amp; Cons:</strong></p>
+<ul>
+  <li><strong>Pros:</strong> Extremely fast to implement. You can be up and running with a merchant account in a day. You keep 100% of the branding on your checkout page.</li>
+  <li><strong>Cons:</strong> This carries the highest risk for data handling. Because you are collecting card numbers directly on your site, you inherit a significant portion of the security liability. If this form is not perfectly secure, you become the primary target for hackers.</li>
+</ul>
+
+<p><strong>The Reality Check:</strong>
+For a simple “Pay” menu order, this is often overkill regarding complexity but okay if your volume is low. However, for high-volume hotels or fine dining where guest trust is paramount, this option is definitely not suitable.</p>
+
+<p><br /></p>
+
+<h2 id="category-2">Category 2:</h2>
+<h3 id="mid-tier-integration-the-managed--automated-workflow-backend-driven--hosted-checkout-the-smart-hybrid">Mid-Tier Integration (The Managed &amp; Automated Workflow) Backend-Driven / Hosted Checkout (The Smart Hybrid)</h3>
+
+<p>Ideal for growing restoration agencies and standard hotels that require automated tracking, recurring payments, and deeper control over order management.∂</p>
+
+<p><strong>PURPOSES and options</strong></p>
+
+<ul>
+  <li><strong>Tracking  orders / booking.</strong>
+    <blockquote>
+      <p>Tracking Orders &amp; Bookings: Linking the customer’s payment directly to their real-time reservation or service ticket so your team knows exactly who paid for what.</p>
+    </blockquote>
+  </li>
+  <li><strong>Subscriptions.(static)</strong>
+    <blockquote>
+      <p>Subscriptions &amp; Recurring Billing: Automating repeat payments, such as monthly maintenance plans for property restoration clients or long-term lodging accounts.</p>
+    </blockquote>
+  </li>
+  <li><strong>Process fixed prices.</strong>
+    <blockquote>
+      <p>Process Fixed Prices (Structured): Handling multi-tiered but predefined pricing packages efficiently across the platform.</p>
+    </blockquote>
+  </li>
+  <li><strong>More advance transaction confirmation.</strong>
+    <blockquote>
+      <p>Advanced Transaction Confirmation: Providing immediate, automated digital receipts and verification triggers to both your customers and your internal team.</p>
+    </blockquote>
+  </li>
+  <li><strong>Limited Totals.</strong>
+    <blockquote>
+      <p>Limited Totals (Configurable): Setting flexible limits on maximum transaction sizes to prevent accidental overcharges while safely processing larger deposits.</p>
+    </blockquote>
+  </li>
+  <li><strong>Payment Refund controll.</strong>
+    <blockquote>
+      <p>Payment Refund Control: Initiating, managing, and tracking customer refunds directly within your dashboard without relying on a slow external processor.</p>
+    </blockquote>
+  </li>
+  <li><strong>Business Logic placed on own Hosts.</strong>
+    <blockquote>
+      <p>Business Logic on Own Hosts: Keeping your essential business data (like customer profiles and booking history) securely under your control on your own website, while safely offloading the heavy card data to the payment provider.</p>
+    </blockquote>
+  </li>
+  <li><strong>Return the check to the customer / Client.</strong>
+    <blockquote>
+      <p>Handling check processing</p>
+    </blockquote>
+  </li>
+</ul>
+
+<p><em>Think of this as using a pre-built lock and door frame from a manufacturer.</em></p>
+
+<p><br /></p>
+
+<p>This is the sweet spot we see most often for serious e-commerce businesses, but also high-end restaurants with complex ordering logic.</p>
+
+<p>Here is how it works: The guest fills out their info on your site (or a landing page you build), but when they hit “Pay,” your server hands them off to the Payment Processor (PSP) like Stripe or Braintree for a split second. They are actually redirected to a secure page owned by the processor, where they enter the card details.</p>
+
+<p><strong>The Compliance Angle:</strong>
+This changes the security rules significantly. Because you aren’t storing the raw credit card number in your database, your compliance burden drops dramatically. You fall into <strong>SAQ-A (Self-Assessment Questionnaire A)</strong> categories for PCI-DSS. This means you handle very little sensitive data yourself, and your liability is shared with the processor.</p>
+
+<p><strong>The Pros &amp; Cons:</strong></p>
+<ul>
+  <li><strong>Pros:</strong> Extremely secure out of the box. It handles 3D Secure authentication (the extra check to verify a user’s identity) automatically. Your development timeline shrinks by weeks because you aren’t building the security layers yourself.</li>
+  <li><strong>Cons:</strong> The checkout experience is technically interrupted. Your guest has to leave your site for a second. While modern processors make this transition invisible, it does break the “flow” slightly more than Level 3.</li>
+</ul>
+
+<hr />
+
+<p><br /></p>
+
+<h2 id="category-3">Category 3:</h2>
+<h3 id="advanced-integration-the-dynamic--high-security-engine-full-custom-api-integration">Advanced Integration (The Dynamic &amp; High-Security Engine) Full Custom API Integration</h3>
+
+<p>Ideal for luxury hotels, multi-location restoration firms, and complex booking engines that require real-time pricing flexibility, sophisticated financial holds, and custom checkout logic.</p>
+
+<p><strong>PURPOSES and options</strong></p>
+
+<ul>
+  <li><strong>Advanced management of orders / booking.</strong>
+    <blockquote>
+      <p>Advanced Management of Orders &amp; Bookings: Handling complex reservation changes, group block bookings, room upgrades, or multi-phase restoration contracts seamlessly.</p>
+    </blockquote>
+  </li>
+  <li><strong>Subscriptions are Advanced and Customized.</strong>
+    <blockquote>
+      <p>Handling Dynamicaly uptated Subscriptions processing.</p>
+    </blockquote>
+  </li>
+  <li><strong>Process DYNAMIC pricing (Dynamic formed pricing process).</strong>
+    <blockquote>
+      <p>Dynamic Pricing Process: Adjusting rates on the fly based on real-time factors, such as seasonal hotel room demand, weekend surges, or customized emergency restoration quotes.</p>
+    </blockquote>
+  </li>
+  <li><strong>More advanced and secure transaction processing.</strong>
+    <blockquote>
+      <p>Highly Secure Transaction Processing: Utilizing specialized tokenization to shield your infrastructure from liabilities while maintaining fluid checkout experiences.</p>
+    </blockquote>
+  </li>
+  <li><strong>Manageble / dynamic Totals.</strong>
+    <blockquote>
+      <p>Manageable &amp; Dynamic Totals: Changing an active bill mid-transaction to accommodate extra amenities, incidental damage fees, or unexpected project scope adjustments.</p>
+    </blockquote>
+  </li>
+  <li><strong>Authorization  Hold /  Pre-Authorization Hold / Pending Transaction / Capture / Settlement.</strong>
+    <blockquote>
+      <p>Two-Step Authorizations (Pre-Auth, Holds, Capture): Placing a temporary hold on a guest’s credit card at check-in to secure funds for incidentals, and capturing the final settlement amount only upon check-out.</p>
+    </blockquote>
+  </li>
+  <li><strong>Deferred payment or Split payment</strong>
+    <blockquote>
+      <p>Deferred &amp; Split Payments: Charging a customer later (e.g., net-30 terms for commercial restoration) or automatically splitting a single bill across multiple credit cards or bank accounts.</p>
+    </blockquote>
+  </li>
+  <li><strong>Discount programs / Discount calculators</strong>
+    <blockquote>
+      <p>Discount Calculators &amp; Programs: Calculating real-time promotional codes, corporate group discounts, or seasonal marketing coupons instantly at checkout.</p>
+    </blockquote>
+  </li>
+  <li><strong>Payment refund controll Advanced.</strong>
+    <blockquote>
+      <p>Advanced Refund Controls: Managing partial refunds, service credits, or automated cancellations based on customized corporate policies.</p>
+    </blockquote>
+  </li>
+  <li><strong>Business logic placed on own Hosts.</strong>
+    <blockquote>
+      <p>Proprietary Business Logic Hosts: Running full, tailored digital algorithms on your own secure servers to control every single step of your custom user experience.</p>
+    </blockquote>
+  </li>
+  <li><strong>Unique Use Cases</strong>
+    <blockquote>
+      <p>Best when payment logic is unique to your specific business model.</p>
+    </blockquote>
+  </li>
+  <li><strong>Others…</strong></li>
+</ul>
+
+<p><em>Think of this as custom-fitting a bespoke lock mechanism where you control every millimeter of metal.</em></p>
+
+<p><br /></p>
+
+<p>This is for the agencies and developers who have specialized in payment systems for years. Here, your team builds the User Interface components that talk <em>directly</em> to the PSP’s API engine. Or, if you use an orchestration layer like Braintree or Adyen, you build your own logic for how payments flow through it.</p>
+
+<p><strong>The Compliance Angle:</strong>
+This is where the rubber meets the road. You are handling the data lifecycle yourself in your codebase. Consequently, <strong>you require full PCI-DSS compliance</strong>. This isn’t just a certification badge; this is an infrastructure requirement. Your servers, your networks, and your internal processes must be audited to global security standards.</p>
+
+<p><strong>The Pros &amp; Cons:</strong></p>
+<ul>
+  <li><strong>Pros:</strong> Total control. You can design a completely seamless experience where the payment never feels like an interruption. You can integrate deeply with loyalty points or specific tax calculations right at that moment. It’s the foundation for enterprise-level platforms.</li>
+  <li><strong>Cons:</strong> High maintenance cost. Security vulnerabilities become your responsibility to fix immediately. Development time and cost are significantly higher compared to Levels 1 or 2.</li>
+</ul>
+
+<hr />
+
+<h2 id="scope-of-work-by-categories">Scope of work by categories</h2>
+
+<p><strong>Minimal:</strong> Standard processing fees apply.<br />(Low maintenance overhead)</p>
+
+<p>(Note: Does not include account onboarding time)</p>
+
+<p><strong>Significant:</strong> Requires annual PCI-DSS audits, security certifications, and potential code fixes.</p>
+
+<div id="timeframe"></div>
+
+<h2 id="timeframe-in-calendar-days">Timeframe in (Calendar days)</h2>
+
+<table>
+  <thead>
+    <tr>
+      <th style="text-align: left">Feature</th>
+      <th style="text-align: left">Category 1 (Script)</th>
+      <th style="text-align: left">Category 2 (Redirects/API)</th>
+      <th style="text-align: left">Category 3 (Full Custom Enterprise + Audits &amp; Fixes)</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td style="text-align: left"><strong>Development Time</strong></td>
+      <td style="text-align: left">1-2 Days</td>
+      <td style="text-align: left">30-90 Days</td>
+      <td style="text-align: left">180-365 Days+</td>
+    </tr>
+  </tbody>
+</table>
+
+<p><br />
+<strong>Please, Note:</strong> Important Considerations &amp; Disclaimers
+<em>Please review the following notes before finalizing your decision. There is timeline is external to your development team. These details often significantly impact your projected launch date.</em> The specified turnaround times are approximate are Approximate (Development Only) and subject to change. The timelines listed above cover <strong>customization and API integration only</strong>. They do <strong>not</strong> include:</p>
+
+<ul>
+  <li><strong>Account Onboarding:</strong> 
+They do not include account onboarding timeframes from the payment provider, where strict background reviews or underwriting verification can take anywhere from <strong>several weeks to a few months</strong>.</li>
+  <li><strong>Audit &amp; Certification:</strong> Passing compliance audits (e.g., PCI-DSS) is mandatory for this model.</li>
+  <li><strong>Regulatory Variables:</strong> Audit deadlines are determined by local government regulations and business location, not developer speed.</li>
+  <li><strong>Realistic Total Timeline:</strong> Custom Application Development (Category 3). The full cycles development for a Category 3  + audit, certification typically takes <strong>6 months to 1 year</strong>.
+<br /></li>
+</ul>
+
+<blockquote>
+  <p>The timeline includes making changes to the finished application and customizing its API, but does not include the development of the application itself or its logical modules.</p>
+</blockquote>
+
+<blockquote>
+  <p>The timeframe  for Category 3 do not include the deadline for passing the audit for certification. The developers do not influence these deadlines and it depends on the region where the business is located and its regulations. In practice, this is a long-term development that takes from six months to a year.</p>
+</blockquote>
+
+<div id="cost"></div>
+
+<h2 id="the-cost-of-complexity">The Cost of Complexity</h2>
+
+<p>Cash receipt processing</p>
+
+<h2 id="website-builder-platforms">Website builder platforms</h2>
+<p>Website builder platforms typically charge an average of ($10) to ($50) per month for standard sites, or ($192) to ($600) per year when paid annually. Platforms usually charge lower rates per month if you buy a yearly subscription upfront. Basic plans start around ($16)–($25)/month, while advanced eCommerce tiers range from ($50) to ($300)/month. The exact annual and monthly costs depend on the platform and your specific needs:</p>
+
+<p><strong>Estimate Costs (Development Agency Rates):</strong></p>
+
+<ul>
+  <li><em>Category 1 (Script/Embed):</em> Very simple copy-paste often provided by the processor (e.g., Stripe Elements JS, PayPal Buttons). Might take 1-4 hours of dev time if customizing design slightly. Low cost.</li>
+  <li><em>Category 2 (Hosted Checkout/Redirect):</em> Requires building a “success/failure” page integration, redirect logic, webhooks setup for confirmation. Usually takes 1-3 days. Moderate cost.</li>
+  <li><em>Category 3 (Custom Backend/API):</em> Requires backend dev time (Node/Python/PHP), handling keys securely, database schemas for transactions, webhook handlers, retry logic. High effort. Weeks to months depending on complexity. High cost.</li>
+</ul>
+
+<p>Let’s build the response.</p>
+
+<ul>
+  <li><strong>Cat 1 (Script):</strong> Low-Code/Embed. Quick setup ($500-$3k). High PCI Scope (SAQ-AIM).</li>
+  <li><strong>Cat 2 (Hosted):</strong> Redirect. Medium ($2k-$8k). Lower PCI Scope (SAQ-C-VT or SAQ-A depending on implementation).</li>
+  <li><strong>Cat 3 (Custom API):</strong> Backend. High ($10k+). Highest PCI Scope.</li>
+</ul>
+
+<p>Wait, usually Hosted Checkout is <em>lower</em> scope than Script (if script means embedded iframe). But the user’s table says Cat 1 = High Risk. I will follow their risk definition to maintain consistency with their previous inputs, but emphasize the cost difference.</p>
+
+<p>Actually, let’s look at standard agency pricing:
+Cat 1 (Script/Widget): Often done in 1-2 days. Agency might charge $500 - $2,000 flat fee if simple.
+Cat 2 (Hosted/Redirect): Requires custom checkout page or integration with a hosted provider API that redirects. Might take 3-7 days. Agency might charge $3,000 - $10,000.
+Cat 3 (Custom API): Weeks of work. $20,000+.</p>
+
+<p>Let’s finalize the numbers based on mid-market US/Europe agency rates (which is where most people asking about “development costs”</p>
+
+<p>The actual development cost charged by an agency to set up a payment system depends entirely on your integration category, platform complexity, and the agency’s geographical location.</p>
+
+<p>Agencies typically bill for payment integration based on a fixed project scope or a time-and-materials model (hourly rate).</p>
+
+<p><strong>Typical Agency Hourly Rates</strong> and Agency pricing is heavily driven by the location and seniority of their engineering teams: * Onshore Agencies (US, UK, Western Europe): $150 – $250+ per hour.</p>
+
+<ol>
+  <li><strong>Category 1</strong>: Agency Cost Breakdown by Script-Based Integration (Drop-in Elements).</li>
+</ol>
+
+<ul>
+  <li>Agency Hours: 4 to 20+ hours</li>
+  <li>Onshore Cost: $500 – $6,000+</li>
+</ul>
+
+<p>It Includes help and adoptation with presented UI design or develop  a custom checkout UI, agency designs and hooks it up to the gateway’s front-end SDK, JavaScript SDK linking, help with onbording to one of the popular / leading digital payment Platforms and third-party accredited cash receipt processing service, integration, settings, 
+custom error state handling, providing basic guides for operating the system</p>
+
+<ol>
+  <li><strong>Category 2</strong>: Hosted Payment Page (e.g., leading digital payment Platforms)</li>
+</ol>
+
+<ul>
+  <li>Agency Hours: 20 to 60+ hours.</li>
+  <li>Onshore Cost: $3,000 – $15,000+</li>
+</ul>
+
+<p>The agency redirects the user to a secure external page or sets up a simple secure iframe.
+Includes configuring the webhook to listen for successful payments and updating the database.</p>
+
+<ol>
+  <li><strong>Category 3</strong>: Full API Integration (Direct Server-to-Server)</li>
+</ol>
+
+<ul>
+  <li>Agency Hours: 120 to 250+ hours (Requires senior backend engineers to build secure databases, tokenization handshakes, high-level encryption, and extensive automated test suites).</li>
+  <li>Onshore Cost: $18,000 – $62,500+</li>
+</ul>
+
+<p>The agency writes custom server-side code to collect, process, and pass credit card payloads directly via backend APIs.</p>
+
+<hr />
+<h2 id="3-critical-cost-drivers-hidden-agency-fees">3. Critical Cost Drivers (Hidden Agency Fees)</h2>
+<p>When an agency quotes a payment integration, these four factors can quickly double the price:</p>
+
+<ul>
+  <li>Platform Architecture: Integrating payments into a turnkey system like Shopify or WooCommerce is fast. Building it into a custom, proprietary Node.js, Python, or Ruby backend drastically increases development hours. [27, 28, 29, 30]</li>
+  <li>Payment Workflows: Subscriptions, recurring billing, usage-based pricing, multi-currency support, and multi-vendor marketplace payouts (like Stripe Connect) add roughly 20 to 50 additional hours to the project scope. [31, 32, 33, 34]</li>
+  <li>Post-Payment Automation: Writing custom integrations to instantly push data to your ERP (e.g., SAP), CRM (e.g., Salesforce), or accounting software (e.g., QuickBooks) requires additional API configurations. [35, 36, 37]</li>
+  <li>Security Documentation: If you require the agency to write the technical architecture diagrams and security compliance handbooks for your upcoming PCI audit, expect an extra fee of $2,000 to $5,000.</li>
+</ul>
+
+<p>Payment for Digital Payment Platform Service:
+there total depends on many factors.</p>
+
+<p>Payment Processing Fees: Platform builders that do not use their own native processor (like Squarespace Payments or Shopify Payments) will typically charge an additional transaction fee of 0.5% to 3% for every sale.</p>
+
+<p>Custom Emails: (\sim $3) to ($6)/month per inbox if not bundled.</p>
+
+<p>Monitoring and alerting systems</p>
+
+<h2 id="how-to-decide-on-a-category">How to decide on a category</h2>
+
+<p>The goal is not merely to choose the “easiest” integration, but the <strong>most secure and compliant</strong> one for your business goals.</p>
+
+<table>
+  <thead>
+    <tr>
+      <th style="text-align: left">Integration Category</th>
+      <th style="text-align: left">Core Risk Profile</th>
+      <th style="text-align: left">Compliance Action Required</th>
+      <th style="text-align: left">Key Consideration</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td style="text-align: left"><strong>Category 1 (Script)</strong></td>
+      <td style="text-align: left">High</td>
+      <td style="text-align: left">Immediate PCI DSS planning.</td>
+      <td style="text-align: left">Focus on input validation and session security.</td>
+    </tr>
+    <tr>
+      <td style="text-align: left"><strong>Category 2 (Hosted)</strong></td>
+      <td style="text-align: left">Moderate</td>
+      <td style="text-align: left">Review PII handling protocols.</td>
+      <td style="text-align: left">Ensure external data sharing is compliant.</td>
+    </tr>
+    <tr>
+      <td style="text-align: left"><strong>Category 3 (Full API)</strong></td>
+      <td style="text-align: left">Highest</td>
+      <td style="text-align: left">Full, dedicated PCI DSS audit roadmap.</td>
+      <td style="text-align: left">Requires robust, dedicated security infrastructure.</td>
+    </tr>
+  </tbody>
+</table>
+
+<h3 id="start-with-category-1-pros">Start with Category 1 (Pros)</h3>
+
+<ul>
+  <li>Is your site built on a standard platform (e.g., WordPress, Shopify) or is it a custom web app?</li>
+  <li>Do you need standard one-time payments, or complex features like subscriptions or split-payouts?</li>
+</ul>
+
+<p>If you are working on launching an MVP, you can absolutely choose <strong>Category 1</strong> first to reduce delay and start selling immediately. This is a very common industry strategy known as <strong>“MVP-First”</strong> (Minimum Viable Product). You validate your business with the simplest setup possible, then upgrade as you grow.</p>
+
+<p>However, while it is technically safe to move later, there are specific requirements for Phase 1 to make that transition smooth and secure.</p>
+
+<p>Here is an analysis of whether this strategy works, along with the risks involved in migrating from Category 1 to Category 2.</p>
+
+<ul>
+  <li><strong>Speed to Market:</strong> You bypass complex backend engineering (Level 3) or long onboarding for hosted portals (sometimes associated with Level 2/2) by using a “Script” first.</li>
+  <li><strong>Lower Initial Cost:</strong> Development time drops from weeks to hours/days.</li>
+  <li><strong>Risk Reduction (The Move):</strong> If Category 1 is a “Low-Code Script,” moving to Category 2 (“Hosted/Managed”) usually means you shift <strong>liability</strong> away from your code and onto the Payment Gateway’s infrastructure. This makes the <em>next step</em> safer, not riskier.</li>
+</ul>
+
+<p>** Is it safe to move from Category 1 → Category 2?**</p>
+
+<p><strong>Yes.</strong> In fact, moving from a custom “Script” (Category 1) to a “Managed/Hosted” solution (Category 2) is generally considered an <strong>improvement in security</strong>.</p>
+<ul>
+  <li><strong>Why?</strong> Managed solutions (Category 2) usually handle the sensitive input fields inside a secure frame hosted by the provider. You no longer own that code or data.</li>
+  <li><strong>Migration (The “Gotchas”) mean Replacement</strong> Simply choosing Category 1 as fast solution for now does not automatically mean it is easy to swap later. You cannot just “switch settings” to move from Category 1 to Category 2. There will be no refactoring, there will be a completely new implementation.</li>
+</ul>
+
+<p>If you want to start with Category 1 to save time and move later, answer “Yes” to these three questions first:</p>
+
+<p><strong>The Decision Checklist for Starting Category 1</strong></p>
+
+<table>
+  <thead>
+    <tr>
+      <th style="text-align: left">Question</th>
+      <th style="text-align: left">If YES, Proceed</th>
+      <th style="text-align: left">If NO, Choose Category 2 Instead</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td style="text-align: left"><strong>Does your product sell low-value items (&lt;$50) initially?</strong></td>
+      <td style="text-align: left">✅ Yes (High volume/impulse buys work well with scripts).</td>
+      <td style="text-align: left">❌ No (Large transactions require higher trust/security).</td>
+    </tr>
+    <tr>
+      <td style="text-align: left"><strong>Are you willing to refacture code later?</strong></td>
+      <td style="text-align: left">✅ Yes (Accept the cost of migration).</td>
+      <td style="text-align: left">❌ No (You want a static, forever solution).</td>
+    </tr>
+    <tr>
+      <td style="text-align: left"><strong>Is PCI compliance a concern for you now?</strong></td>
+      <td style="text-align: left">✅ No (Use SaaS scripts that tokenize data for you).</td>
+      <td style="text-align: left">✅ Yes (Better to start with Hosted/Redirect immediately).</td>
+    </tr>
+    <tr>
+      <td style="text-align: left"><strong>UX  (User Experience)</strong></td>
+      <td style="text-align: left">Consider. A popup often looks generic compared to a “Hosted” checkout page.</td>
+      <td style="text-align: left">Consider. Use the Payment Gateway’s standard styles for Cat 1 so the user experience feels professional now, making the upgrade less visible later.</td>
+    </tr>
+    <tr>
+      <td style="text-align: left"><strong>Customer Trust</strong></td>
+      <td style="text-align: left">Consider</td>
+      <td style="text-align: left">Consider</td>
+    </tr>
+  </tbody>
+</table>
+
+<h3 id="final-recommendation">Final Recommendation</h3>
+
+<p><strong>Why “Categories” and “Complexity Level” Matter Permalink</strong>
+Do not treat compliance as an afterthought. Integrate a formal risk assessment into the project scope immediately. The complexity of modern payments demands that technical solutions and regulatory adherence are built in simultaneously, ensuring your system is secure today and compliant tomorrow.
+Keep balance.
+I see many projects start with Level 3 in mind because the developer wants to build a cool feature, but then realize that hosting the data makes them responsible for a breach they can’t afford.</p>
+
+<table>
+  <thead>
+    <tr>
+      <th style="text-align: left">Risk Profile</th>
+      <th style="text-align: left">Recommended Path</th>
+      <th style="text-align: left">Why?</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td style="text-align: left"><strong>Low Risk / MVP</strong></td>
+      <td style="text-align: left"><strong>Level 2 (Redirect/API)</strong></td>
+      <td style="text-align: left">Fastest launch, lowest security burden, standard costs.</td>
+    </tr>
+    <tr>
+      <td style="text-align: left"><strong>High Volume / Specialized Logic</strong></td>
+      <td style="text-align: left"><strong>Level 3 (Full Custom)</strong></td>
+      <td style="text-align: left">Only choose this if you need specific payment flows that APIs cannot support. Expect 1 year of total lead time due to audits.</td>
+    </tr>
+  </tbody>
+</table>
+
+<p>Here is my “insider” comparison for business owners looking at their budget and timeline.</p>
+
+<p>If you want to pin down a realistic quote, let me know.</p>
+
+<p>Test test typing OK right thank you</p>
+
+<h2 id="conclusions">Conclusions</h2>
+<p>All Categories are good eve if we know where it aply</p>
+
+
+</div>
+
+
+        
+      </section>
+
+      <footer class="page__meta">
+
+
+ <p class="page__taxonomy">
+    <strong><i class="fas fa-fw fa-code" aria-hidden="true"></i> 
+        Technical Depth
+    
+    </strong>
+    <span itemprop="keywords">
+low
+
+    </span>
+  </p>
+  </br>
+
+
+
+        
+
+
+
+
+        
+  
+
+
+  
+
+  <p class="page__taxonomy">
+    <strong><i class="fas fa-fw fa-tags" aria-hidden="true"></i> Tags: </strong>
+    <span itemprop="keywords">
+    
+      <a href="/tags/#edge-case" class="page__taxonomy-item p-category" rel="tag">edge case</a><span class="sep">, </span>
+    
+      <a href="/tags/#featured-image" class="page__taxonomy-item p-category" rel="tag">featured image</a><span class="sep">, </span>
+    
+      <a href="/tags/#image" class="page__taxonomy-item p-category" rel="tag">image</a><span class="sep">, </span>
+    
+      <a href="/tags/#layout" class="page__taxonomy-item p-category" rel="tag">layout</a>
+    
+    </span>
+  </p>
+
+
+
+
+  
+
+
+  
+
+  <p class="page__taxonomy">
+    <strong><i class="fas fa-fw fa-folder-open" aria-hidden="true"></i> Categories: </strong>
+    <span itemprop="keywords">
+    
+      <a href="/categories/#bussiness" class="page__taxonomy-item p-category" rel="tag">bussiness</a><span class="sep">, </span>
+    
+      <a href="/categories/#layout" class="page__taxonomy-item p-category" rel="tag">Layout</a><span class="sep">, </span>
+    
+      <a href="/categories/#uncategorized" class="page__taxonomy-item p-category" rel="tag">Uncategorized</a>
+    
+    </span>
+  </p>
+
+
+        
+
+  <p class="page__date"><strong><i class="fas fa-fw fa-calendar-alt" aria-hidden="true"></i> Updated:</strong> <time class="dt-published" datetime="2026-03-14T01:00:00-07:00">March 14, 2026</time></p>
+
+
+      
+
+
+
+      </footer>
+
+      <section class="page__share">
+  <h4 class="page__share-title">Share on</h4>
+
+  <a href="https://x.com/intent/tweet?text=From+Cowrie+to+digital+speeds%20http%3A%2F%2Flocalhost%3A4000%2Fen%2Fblog%2Fpayment-system-integration%2F" class="btn btn--x" aria-label="Share on X" onclick="window.open(this.href, 'window', 'left=20,top=20,width=500,height=500,toolbar=1,resizable=0'); return false;" title="Share on X">
+    <i class="fab fa-fw fa-x-twitter" aria-hidden="true"></i><span> X</span>
+  </a>
+
+  <a href="https://www.facebook.com/sharer/sharer.php?u=http%3A%2F%2Flocalhost%3A4000%2Fen%2Fblog%2Fpayment-system-integration%2F" class="btn btn--facebook" aria-label="Share on Facebook" onclick="window.open(this.href, 'window', 'left=20,top=20,width=500,height=500,toolbar=1,resizable=0'); return false;" title="Share on Facebook">
+    <i class="fab fa-fw fa-facebook" aria-hidden="true"></i><span> Facebook</span>
+  </a>
+
+  <a href="https://www.linkedin.com/shareArticle?mini=true&url=http://localhost:4000/en/blog/payment-system-integration/" class="btn btn--linkedin" aria-label="Share on LinkedIn" onclick="window.open(this.href, 'window', 'left=20,top=20,width=500,height=500,toolbar=1,resizable=0'); return false;" title="Share on LinkedIn">
+    <i class="fab fa-fw fa-linkedin" aria-hidden="true"></i><span> LinkedIn</span>
+  </a>
+
+  <a href="https://bsky.app/intent/compose?text=From+Cowrie+to+digital+speeds%20http%3A%2F%2Flocalhost%3A4000%2Fen%2Fblog%2Fpayment-system-integration%2F" class="btn btn--bluesky" onclick="window.open(this.href, 'window', 'left=20,top=20,width=500,height=500,toolbar=1,resizable=0'); return false;" title="Share on Bluesky">
+    <i class="fab fa-fw fa-bluesky" aria-hidden="true"></i><span> Bluesky</span>
+  </a>
+</section>
+
+
+      
+  <nav class="pagination">
+    
+      <a href="/en/blog/master-project-estimates/" class="pagination--pager" title="Project Timelines That Stick">Previous</a>
+    
+    
+      <a href="/en/blog/pre-order-systems/" class="pagination--pager" title="Pre-orders system integration">Next</a>
+    
+  </nav>
+
+
+    </div>
+
+    
+  </article>
+
+  
+  
+    
+<div class="page__related">
+  
+  <h2 class="page__related-title">You may also enjoy</h2>
+  <div class="grid__wrapper">
+    
+      
+      
+
+
+
+<div class="grid__item">
+  <article class="archive__item" itemscope itemtype="https://schema.org/CreativeWork">
+    
+      <div class="archive__item-teaser">
+        <img src="/media/images/listed/fail-before-leaving-staging.jpg" alt="">
+      </div>
+    
+    <h2 class="archive__item-title no_toc" itemprop="headline">
+      
+        <a href="/en/blog/why-80-percent-of-hospitality-llm-products-fail-before-leaving-staging" rel="permalink">Why 80% of Hospitality LLM Products Fail Before Leaving Staging
+</a>
+      
+    </h2>
+    
+
+  <p class="page__meta">
+    
+
+    
+
+    
+      
+      
+
+      <span class="page__meta-readtime">
+        <i class="far fa-clock" aria-hidden="true"></i>
+        
+          3 minute read
+        
+      </span>
+    
+  </p>
+
+
+    <p class="archive__item-excerpt" itemprop="description">Deterministic Code vs. Probabilistic Chaos: Building LLM Apps That Don’t Break
+</p>
+  </article>
+</div>
+
+    
+      
+      
+
+
+
+<div class="grid__item">
+  <article class="archive__item" itemscope itemtype="https://schema.org/CreativeWork">
+    
+      <div class="archive__item-teaser">
+        <img src="/media/images/listed/hidden-tax-of-ai.jpg" alt="">
+      </div>
+    
+    <h2 class="archive__item-title no_toc" itemprop="headline">
+      
+        <a href="/en/blog/the-hidden-tax-of-ai" rel="permalink">The Hidden Tax of AI
+</a>
+      
+    </h2>
+    
+
+  <p class="page__meta">
+    
+
+    
+
+    
+      
+      
+
+      <span class="page__meta-readtime">
+        <i class="far fa-clock" aria-hidden="true"></i>
+        
+          4 minute read
+        
+      </span>
+    
+  </p>
+
+
+    <p class="archive__item-excerpt" itemprop="description">What Devs and Product Owners Overlook in LLM Architectures.
+</p>
+  </article>
+</div>
+
+    
+      
+      
+
+
+
+<div class="grid__item">
+  <article class="archive__item" itemscope itemtype="https://schema.org/CreativeWork">
+    
+      <div class="archive__item-teaser">
+        <img src="/media/images/listed/sycophancy-bias-phenomenon.jpg" alt="">
+      </div>
+    
+    <h2 class="archive__item-title no_toc" itemprop="headline">
+      
+        <a href="/en/blog/sycophancy-bias-is-a-phenomenon/" rel="permalink">Sycophancy bias is a phenomenon
+</a>
+      
+    </h2>
+    
+
+  <p class="page__meta">
+    
+
+    
+
+    
+      
+      
+
+      <span class="page__meta-readtime">
+        <i class="far fa-clock" aria-hidden="true"></i>
+        
+          4 minute read
+        
+      </span>
+    
+  </p>
+
+
+    <p class="archive__item-excerpt" itemprop="description">AI opinion excessively agree with, flatter, or validate a user’s stated beliefs.
+</p>
+  </article>
+</div>
+
+    
+      
+      
+
+
+
+<div class="grid__item">
+  <article class="archive__item" itemscope itemtype="https://schema.org/CreativeWork">
+    
+      <div class="archive__item-teaser">
+        <img src="/media/images/listed/llm-acuracy.jpg" alt="">
+      </div>
+    
+    <h2 class="archive__item-title no_toc" itemprop="headline">
+      
+        <a href="/en/blog/llm-acuracy-validation-mechanisms/" rel="permalink">LLM Acuracy Validation Mechanisms
+</a>
+      
+    </h2>
+    
+
+  <p class="page__meta">
+    
+
+    
+
+    
+      
+      
+
+      <span class="page__meta-readtime">
+        <i class="far fa-clock" aria-hidden="true"></i>
+        
+          3 minute read
+        
+      </span>
+    
+  </p>
+
+
+    <p class="archive__item-excerpt" itemprop="description">AI opinion excessively agree with, flatter, or validate a user’s stated beliefs.
+</p>
+  </article>
+</div>
+
+    
+  </div>
+</div>
+
+  
+  
+</div>
+
+<!-- https://unpkg.com/open-props@1.7.23/open-props.min.css -->
+ <!-- read_time: true -->
+  <!-- comments: true -->
+     <!-- related: true -->
+      <!-- include after-content.html  -->
+</main>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<section>
+  <!-- class="aether-ui-container" -->
+        <div popover id="chat-popover" class="chat">
+        <div class="chat-content-wrapper">
+          <header class="chat-header">
+
+            <button
+              popovertarget="chat-popover"
+              popovertargetaction="hide"
+              class="chat-popover-close-btn"
+              aria-label="Close Chat"
+              title="Close Chat"
+            >
+              <svg
+                xmlns="http://www.w3.org/2000/svg"
+                viewBox="0 0 24 24"
+                width="24"
+                height="24"
+                fill="currentColor"
+                aria-hidden="true"
+              >
+                <path
+                  d="M11.9997 10.5865L16.9495 5.63672L18.3637 7.05093L13.4139 12.0007L18.3637 16.9504L16.9495 18.3646L11.9997 13.4149L7.04996 18.3646L5.63574 16.9504L10.5855 12.0007L5.63574 7.05093L7.04996 5.63672L11.9997 10.5865Z"
+                ></path>
+              </svg>
+            </button>
+          </header>
+
+          <section class="chat-section">
+            <div class="result">
+              
+
+               <!-- Chat History -->
+        <div class="chat-history" id="chat-history">
+            <!-- Initial Message -->
+            <div class="message-container agent">
+                <div class="message-avatar">A</div>
+                <div class="message-bubble">Hello! I am Alogio Assistant. Can I help you write a message for the developers? I'll also ask a few questions.</div>
+            </div>
+        </div>
+
+            </div>
+
+
+                    <!-- Chat Input Area -->
+        <div class="chat-input-area">
+            <input type="text" class="chat-input" id="user-input" placeholder="Type your message...">
+            <button class="action-icon-button" id="microphone-button">
+                <i class="fas fa-microphone"></i>
+            </button>
+            <button class="action-icon-button" id="send-button">
+                <i class="fas fa-paper-plane"></i>
+            </button>
+        </div>
+
+          </section>
+        </div>
+      </div>
+</section>
+
+
+
+
+<!-- 
+
+            <form action="">
+              <div class="chat-input-container">
+
+
+
+
+                <textarea autofocus class="chat-textarea" placeholder="Ask me anything" type="text"></textarea>
+        
+              <button type="submit" class="chat-submit-btn" aria-label="Chat Submit" title="Chat Submit">
+                  <svg width="24" height="24" viewBox="0 0 24 24" fill="currentColor" xmlns="http://www.w3.org/2000/svg"
+                    aria-hidden="true">
+                    <g clip-path="url(#clip0_208_691)">
+                      <path
+                        d="M2.5664 3.26059C2.32007 2.76794 2.51587 2.5663 3.02256 2.81964L21.0172 11.8169C21.5155 12.0661 21.5206 12.4896 21.0494 12.7513L3.69739 22.3914C3.21698 22.6582 2.98859 22.4559 3.18594 21.9427L6.36304 13.6822L16.2625 12.268L6.36306 10.8538L2.5664 3.26059Z" />
+                    </g>
+                    <defs>
+                      <clipPath id="clip0_208_691">
+                        <rect width="24" height="24" fill="white" />
+                      </clipPath>
+                    </defs>
+                  </svg>
+                </button> 
+              </div>
+            </form> -->
+
+    <!-- <div class="initial-content">
+
+    </div> -->
+
+    
+
+
+
+<footer class="w3-container w3-padding-64 w3-center w3-light-grey w3-xlarge footersome site-footer">
+ 
+        <!-- start custom footer snippets -->
+
+<!-- end custom footer snippets -->
+          <p class="w3-medium w3-padding-16">© 2026 <a href="https://ailogio.github.io" target="_blank">ailogio.github.io</a></p>
+
+  <script src="/static/js/chat-bot.js"></script> 
+
+      </footer>
+
+
+<!-- include cookies_notice.html  -->
+<div id="cookie-banner" class="hidden">
+  <div class="content-cookie-banner">
+    <h3>We use cookies!</h3>
+    <p>This site uses <strong>essential</strong> cookies (always on), <strong>analytics</strong> (usage stats)<strong></strong>. 
+      </p>
+     <p><a href="/privacy">Privacy Policy</a> | <a href="/cookies">Cookie Policy </a></p>
+
+    <div class="toggles-cookie-banner">
+      <label><input type="checkbox" id="essential" checked disabled> Essential</label>
+      <label><input type="checkbox" id="analytics" checked> Analytics</label>
+      <label><input type="checkbox" id="marketing"> Marketing</label>
+    </div>
+    <button id="save">Save Preferences</button>
+    <button id="reject-all">Reject Non-Essential</button>
+  </div>
+</div>
+
+
+
+
+<!-- <script src="/static/js/router.js"></script> -->
+<script>const PLNG = "DE";</script>
+<script defer="defer" src="/static/js/script.js" ></script>
+<script defer="defer" src="/static/js/cookies.js" ></script>
+
+
+    
+    
+  <script src="/assets/js/main.min.js"></script>
+
+
+
+
+
+
+
+
+
+    <!--
+  Ailogio Blog
+  Copyright 2016-2026 Sergio Ottovini - ailogio.github.io | @ailogio
+  https://ailogio.github.io
+-->
+
+  </body>
+</html>

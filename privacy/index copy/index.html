@@ -1,0 +1,458 @@
+<!doctype html>
+
+<!-- <html lang="en-US" class="no-js"> -->
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+
+<!-- begin _includes/seo.html --><title>AILOGIO</title>
+<meta name="description" content="Blog about development of AI &amp; Payments for Restaurants &amp; Hotels">
+
+
+  <meta name="author" content="Your Name">
+  
+
+
+<meta property="og:type" content="website">
+<meta property="og:locale" content="en_US">
+<meta property="og:site_name" content="AILOGIO">
+<meta property="og:title" content="AILOGIO">
+<meta property="og:url" content="http://localhost:4000/privacy/index%20copy/">
+
+
+  <meta property="og:description" content="Blog about development of AI &amp; Payments for Restaurants &amp; Hotels">
+
+
+
+
+
+
+
+
+
+
+
+  
+
+  
+
+
+<link rel="canonical" href="http://localhost:4000/privacy/index%20copy/">
+
+
+
+
+
+
+
+
+
+
+
+
+<!-- end _includes/seo.html -->
+
+
+
+  <link href="/feed.xml" type="application/atom+xml" rel="alternate" title="AILOGIO Feed">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<script>
+  document.documentElement.className = document.documentElement.className.replace(/\bno-js\b/g, '') + ' js ';
+  window.enable_copy_code_button = true;
+</script>
+
+
+<link rel="apple-touch-icon" href="static/assets/apple-touch-icon.png" sizes="180x180" />
+<link rel="icon" href="/static/assets/logo.svg" type="image/x-icon">
+
+<!-- For all browsers -->
+<link rel="stylesheet" href="/assets/css/main.css">
+<link rel="stylesheet" href="/static/css/style.css">
+<link rel="stylesheet" href="/static/css/style_sblock.css">
+  
+<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Lato">
+
+<link rel="preload" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@latest/css/all.min.css" as="style" onload="this.onload=null;this.rel='stylesheet'">
+<noscript><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@latest/css/all.min.css"></noscript>
+
+
+
+
+    <!-- start custom head snippets -->
+
+<!-- insert favicons. use https://realfavicongenerator.net/ -->
+
+<!-- end custom head snippets -->
+
+  </head>
+
+  <body class="layout--default" dir="ltr">
+    <nav class="skip-links">
+  <ul>
+    <li><a href="#site-nav" class="screen-reader-shortcut">Skip to primary navigation</a></li>
+    <li><a href="#main" class="screen-reader-shortcut">Skip to content</a></li>
+    <li><a href="#footer" class="screen-reader-shortcut">Skip to footer</a></li>
+  </ul>
+</nav>
+
+    
+
+<div class="masthead">
+  <div class="masthead__inner-wrap">
+    <div class="masthead__menu">
+      <nav id="site-nav" class="greedy-nav">
+        
+        <a class="site-title" href="/">
+          AILOGIO
+          
+        </a>
+        <ul class="visible-links"><li class="masthead__menu-item">
+              <a
+                href="/"
+                
+                
+              >Home</a>
+            </li><li class="masthead__menu-item">
+              <a
+                href="/about/"
+                
+                
+              >About</a>
+            </li><li class="masthead__menu-item">
+              <a
+                href="/blog/"
+                
+                
+              >Blog</a>
+            </li><li class="masthead__menu-item">
+              <a
+                href="/year-archive/"
+                
+                
+              >Sample Posts</a>
+            </li><li class="masthead__menu-item">
+              <a
+                href="/collection-archive/"
+                
+                
+              >Sample Collections</a>
+            </li><li class="masthead__menu-item">
+              <a
+                href="/sitemap/"
+                
+                
+              >Sitemap</a>
+            </li><li class="masthead__menu-item">
+              <a
+                href="https://mmistakes.github.io/minimal-mistakes/docs/quick-start-guide/"
+                
+                
+              >Quick-Start Guide 1</a>
+            </li><li class="masthead__menu-item">
+              <a
+                href="https://mmistakes.github.io/minimal-mistakes/about/"
+                
+                
+              >GH Reff</a>
+            </li></ul>
+        
+        <button class="greedy-nav__toggle hidden" type="button">
+          <span class="visually-hidden">Toggle menu</span>
+          <div class="navicon"></div>
+        </button>
+        <ul class="hidden-links hidden"></ul>
+      </nav>
+    </div>
+  </div>
+</div>
+
+
+
+<!-- ---------------- -->
+
+
+    <!-- Language dropdown (top-right style) -->
+    <div class="lang-container">
+        <button class="lang-dropdown">🌐 <span id="current-lang">EN</span></button>
+        <div class="lang-content">
+            <a href="#" data-lang="en" class="current-lang" onclick="switchLanguage('en'); return false;">EN</a>
+            <a href="#" data-lang="it" onclick="switchLanguage('it'); return false;">IT</a>
+            <a href="#" data-lang="de" onclick="switchLanguage('de'); return false;">DE</a>
+            <a href="#" data-lang="fr" onclick="switchLanguage('fr'); return false;">FR</a>
+            <a href="#" data-lang="es" onclick="switchLanguage('es'); return false;">ES</a>
+        </div>
+    </div>
+
+    <!-- Sample dynamic menu bar -->
+    <ul id="menu-bar" class="menu-bar menu-en">
+        <li></li>
+        <li></li>
+        <li></li>
+    </ul>
+
+<!-- In your layout/body, BEFORE script -->
+<div id="menu-container"></div>      <!-- Empty div for menu -->
+<div id="right-bar-container"></div> <!-- Empty div for sidebar -->
+
+
+    <!-- Language dropdown (from previous code) -->
+    <div class="lang-container">...</div>
+
+
+
+<input type="checkbox" id="toggle-element" class="hidden-checkpoint">
+<nav id="menu-container">
+<div id="menu-container2">Loading menu...</div>
+</nav>
+
+
+<script>
+    // Your language loader
+    const lang = localStorage.getItem('userLang') || 
+                 (navigator.language || 'en').split('-')[0] || 'en';
+    loadComponent('menu-container', `/parts/static_beans/menu_${lang}.html`);
+    </script>
+ 
+
+ 
+<main class="main-content">
+<div id="app">
+
+</div>
+</main>
+
+  <!--
+<nav>
+
+
+ <a href="#/">Home</a>
+  <a href="#/en/latest">Latest (EN)</a>
+  <a href="#/it/post/hello-world">Sample Post</a>
+</nav>
+ <div id="app"></div> -->
+
+
+
+<!-- The Content: Just a div nearby -->
+<!-- <div id="myElement2">
+  <div class="content">
+  I am the content!
+</div>
+</div> -->
+
+
+
+
+ <!-- We use data-target to tell JS which ID to open -->
+<!-- <nav>
+  <div class="w3-top">
+    <div class="w3-bar w3-white">
+     
+      <a href="javascript:void(0)" class="nav-btn" data-target="sectionSlots">El 1</a>
+      <a href="javascript:void(0)" class="nav-btn" data-target="el2">El 2</a>
+      <a href="javascript:void(0)" class="nav-btn" data-target="el3">El 3</a>
+      <a href="javascript:void(0)" class="nav-btn" data-target="el4">El 4</a>
+    </div>
+  </div>
+</nav> -->
+
+<!-- Sections that are hidden by default -->
+<!-- <section id="el1" class="reveal-section">SMTH Content 1</section>
+<section id="el2" class="reveal-section">SMTH Content 2</section> -->
+
+  <!-- Toggle for Sub-Element -->
+<!-- <section id="other-section3"> 
+  <p>Main Section 3 content...</p>
+  
+
+  <button class="toggle-btn" data-target="sub-el1">Show Sub 1</button>
+  <div id="sub-el1" class="reveal-section sub-content">Hidden Sub-SMTH 1</div>
+
+  <button class="toggle-btn" data-target="sub-el2">Show Sub 2</button>
+  <div id="sub-el2" class="reveal-section sub-content">Hidden Sub-SMTH 2</div>
+</section>
+
+<section id="el3" class="reveal-section">
+   <p>Main Section 3...</p>
+   <button class="toggle-btn" data-target="sub-el3">Show Sub 3</button>
+   <div id="sub-el3" class="reveal-section sub-content">Hidden Sub-SMTH 3</div>
+</section> -->
+
+
+
+ <!-- <div style="margin-bottom: 20px;">
+        <label for="lang-select">Language: </label>
+        <select id="lang-select">
+            <option value="en">English</option>
+            <option value="de">Deutsch</option>
+        </select>
+    </div> -->
+
+<!-- Footer -->
+<!-- <footer class="w3-container w3-padding-64 w3-center w3-opacity w3-light-grey w3-xlarge footersome site-footer"> -->
+<footer class="w3-container w3-padding-64 w3-center w3-light-grey w3-xlarge footersome site-footer">
+
+
+    <!-- <a target="_blank" href="https://www.x.com//" title="Ailogio AI on Facebook"><i class="fa">
+      <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"><g fill="currentColor"><path d="M1 2h2.5L3.5 2h-2.5zM5.5 2h2.5L7.2 2h-2.5z"><animate fill="freeze" attributeName="d" dur="0.4s" values="M1 2h2.5L3.5 2h-2.5zM5.5 2h2.5L7.2 2h-2.5z;M1 2h2.5L18.5 22h-2.5zM5.5 2h2.5L23 22h-2.5z"></animate></path><path d="M3 2h5v0h-5zM16 22h5v0h-5z"><animate fill="freeze" attributeName="d" begin="0.4s" dur="0.4s" values="M3 2h5v0h-5zM16 22h5v0h-5z;M3 2h5v2h-5zM16 22h5v-2h-5z"></animate></path><path d="M18.5 2h3.5L22 2h-3.5z"><animate fill="freeze" attributeName="d" begin="0.5s" dur="0.4s" values="M18.5 2h3.5L22 2h-3.5z;M18.5 2h3.5L5 22h-3.5z"></animate></path></g></svg>
+    </i></a>
+
+  <a target="_blank" href="https://www.instagram.com//" title="Ailogio AI on Instagram"><i class="fa">
+    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"><circle cx="17" cy="7" r="1.5" fill="currentColor" fill-opacity="0"><animate fill="freeze" attributeName="fill-opacity" begin="1.3s" dur="0.15s" values="0;1"></animate></circle><g fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"><path stroke-dasharray="72" stroke-dashoffset="72" d="M16 3c2.76 0 5 2.24 5 5v8c0 2.76 -2.24 5 -5 5h-8c-2.76 0 -5 -2.24 -5 -5v-8c0 -2.76 2.24 -5 5 -5h4Z"><animate fill="freeze" attributeName="stroke-dashoffset" dur="0.6s" values="72;0"></animate></path><path stroke-dasharray="28" stroke-dashoffset="28" d="M12 8c2.21 0 4 1.79 4 4c0 2.21 -1.79 4 -4 4c-2.21 0 -4 -1.79 -4 -4c0 -2.21 1.79 -4 4 -4"><animate fill="freeze" attributeName="stroke-dashoffset" begin="0.7s" dur="0.6s" values="28;0"></animate></path></g></svg>
+  </i></a> -->
+
+
+<!--  
+  <i class="fa fa-facebook-official w3-hover-opacity w3-padding-lr-8"></i>
+  <i class="fa fa-instagram w3-hover-opacity w3-padding-lr-8"></i>
+  <i class="fa fa-snapchat w3-hover-opacity w3-padding-lr-8"></i>
+  <i class="fa fa-pinterest-p w3-hover-opacity w3-padding-lr-8"></i>
+  <i class="fa fa-twitter w3-hover-opacity w3-padding-lr-8"></i>
+  <i class="fa fa-linkedin w3-hover-opacity w3-padding-lr-8"></i> -->
+
+<!-- <p class="w3-medium w3-padding-16"></p>
+   <a target="_blank" href="/about" title="About Ailogio" class="text-lnk">ABOUT</a>
+  <a target="_blank" href="/business" title="Forum" class="text-lnk">FOR BUSINESS</a>
+  <a target="_blank" href="/contacts" title="Forum" class="text-lnk">CONTACTS</a> -->
+
+  <p class="w3-medium w3-padding-16">© 2026 <a href="https://ailogio.github.io" target="_blank">ailogio.github.io</a></p>
+</footer>
+
+
+
+
+
+<!-- <script src="static/js/sidebar.js"></script> -->
+<script src="/static/js/router.js"></script>
+
+  <!-- <div id="slotsElement2" class="content">
+    I am in a different section but I still work!
+  </div> -->
+<script>const PLNG = "DE";</script>
+<!-- <script defer="defer" src="static/js/app.js" ></script> -->
+<script defer="defer" src="/static/js/script.js" ></script>
+<script defer="defer" src="/static/js/cookies.js" ></script>
+
+
+<!-- ---------------- -->
+
+    <div class="initial-content">
+      <!DOCTYPE html>
+<html>
+<head>
+  <title>Privacy Policy</title>
+  <meta charset="utf-8">
+</head>
+<body>
+  <h1>Privacy Policy</h1>
+  
+  <p><strong>Effective: March 13, 2026</strong></p>
+  
+  <p>Sergio Ottovini operates this website from Moscow, Russia. We respect your privacy.</p>
+
+  <h2>Data We Collect</h2>
+  
+  <h3>1. Cookies (Detailed in Cookie Policy)</h3>
+  <ul>
+    <li><strong>Essential:</strong> Language preference, session management, consent storage</li>
+    <li><strong>Analytics (Opt-in):</strong> Google Analytics (page views, sessions) - only if you consent</li>
+  </ul>
+  <p><a href="/cookies.html">See Cookie Policy</a></p>
+
+  <h3>2. Server Logs</h3>
+  <ul>
+    <li>IP address (anonymized)
+    <li>Browser type/version
+    <li>Referring page
+    <li>Timestamp
+  </ul>
+  <p>Logs retained 30 days for security. Not used for profiling.</p>
+
+  <h3>3. Contact Forms</h3>
+  <p>No forms on this site. Future forms will only collect name/email for response.</p>
+
+  <h2>How We Use Data</h2>
+  <ul>
+    <li>Essential site functionality
+    <li>Analytics (aggregate, anonymized, opt-in only)
+    <li>Site security and performance
+    <li>No marketing or profiling
+  </ul>
+
+  <h2>Data Sharing</h2>
+  <ul>
+    <li><strong>No third parties</strong> except Google Analytics (your IP anonymized)
+    <li>No data sales
+    <li>Google Analytics: See their <a href="https://policies.google.com/privacy">Privacy Policy</a>
+  </ul>
+
+  <h2>Your Rights (GDPR/CCPA)</h2>
+  <ul>
+    <li><strong>Access:</strong> Email to see what we store
+    <li><strong>Delete:</strong> Clear browser cookies/data
+    <li><strong>Withdraw consent:</strong> <a href="#" id="cookie-settings">Cookie Settings</a>
+    <li><strong>Object:</strong> Disable analytics via consent banner
+  </ul>
+
+  <h2>Security</h2>
+  <p>We use HTTPS, secure cookies (SameSite=Strict), and limit data retention.</p>
+
+  <h2>Children</h2>
+  <p>Site not directed at children under 16. No knowing collection.</p>
+
+  <h2>Changes</h2>
+  <p>We'll notify via cookie banner for material changes.</p>
+
+  <h2>Contact</h2>
+  <p>Email: [your-email@example.com]</p>
+</body>
+</html>
+
+
+Privacy
+ 
+
+Private Information: You may not publish or post other people's private information (such as home phone number and address) without their express authorization and permission. We also prohibit threatening to expose private information or incentivizing others to do so. Learn more.
+
+Non-Consensual Nudity: You may not post or share intimate photos or videos of someone that were produced or distributed without their consent. Learn more.
+
+Account Compromise: You may not use or attempt to use credentials, passwords, tokens, keys, cookies or other data to log into or otherwise access, add, delete or modify the private information or account features of any X account other than your own (or those you have been directly authorized to do so via X’s Teams authorization, OAuth authorization or similar mechanism).
+
+
+      
+    </div>
+
+    
+
+    <div id="footer" class="page__footer">
+      <footer>
+        <!-- start custom footer snippets -->
+
+<!-- end custom footer snippets -->
+          <p class="w3-medium w3-padding-16">© 2026 <a href="https://ailogio.github.io" target="_blank">ailogio.github.io</a></p>
+
+  <script src="/static/js/chat-bot.js"></script> 
+
+      </footer>
+    </div>
+
+    
+  <script src="/assets/js/main.min.js"></script>
+
+
+
+
+
+
+
+
+
+    <!--
+  Ailogio Blog
+  Copyright 2016-2026 Sergio Ottovini - ailogio.github.io | @ailogio
+  https://ailogio.github.io
+-->
+
+  </body>
+</html>

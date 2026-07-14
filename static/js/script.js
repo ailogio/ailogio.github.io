@@ -67,7 +67,7 @@
 
         // FIX: if the button points to a target that doesn't exist, stop here.
         if (!targetEl) {
-            console.warn(`Target element #${targetId} not found.`);
+            // console.warn(`Target element #${targetId} not found.`);
             return; 
         }
 
@@ -94,7 +94,8 @@
                 
                 // Inject content
                 targetEl.innerHTML = decodeURIComponent(escape(atob(base64Content.trim())));
-                
+
+         
                 // NOW trigger the animation
                 targetEl.classList.add('active');
                 requestAnimationFrame(() => {
@@ -102,6 +103,14 @@
                         targetEl.classList.add('visible');
                     });
                 });
+
+                // Scroll to target + trigger animation
+targetEl.scrollIntoView({ 
+    behavior: 'smooth', 
+    block: 'start'  // Top of viewport
+});
+       
+
             } catch (e) {
                 targetEl.innerHTML = "Error loading content.";
             }
@@ -120,10 +129,72 @@
     }
 
     // 2. Click Event Listener
-    document.addEventListener('click', (e) => {
-        const btn = e.target.closest('[data-target]');
-        if (btn) revealContent(btn);
-    });
+    // document.addEventListener('click', (e) => {
+    //     const btn = e.target.closest('[data-target]');
+    //     if (btn) revealContent(btn);
+    // });
+
+
+    // Add after loadComponent calls in DOMContentLoaded
+// document.addEventListener('click', async (e) => {
+//     const btn = e.target.closest('a[data-target]');
+//     if (btn) {
+//         e.preventDefault();
+//         const targetId = btn.dataset.target;
+        
+//         // Redirect to /?show=target (from any page)
+//         if (window.location.pathname !== '/') {
+//             window.location.href = `/?show=${targetId}`;
+//             return;
+//         }
+        
+//         // Already on /, reveal immediately
+//         revealContent(btn);
+//     }
+// });
+
+// document.addEventListener('click', (e) => {
+//     const btn = e.target.closest('a[data-target]');
+//     if (btn) {
+//         e.preventDefault();
+//         const targetId = btn.dataset.target;
+        
+//         if (window.location.pathname !== '/') {
+//             // Store target, redirect to /
+//             sessionStorage.setItem('pendingTarget', targetId);
+//             window.location.href = '/';
+//             return;
+//         }
+        
+//         // On /, reveal now
+//         revealContent(btn);
+//     }
+// });
+
+document.addEventListener('click', (e) => {
+    const btn = e.target.closest('a[data-target]');
+    if (btn) {
+        e.preventDefault();
+        const targetId = btn.dataset.target;
+        
+             // Close mobile menu FIRST
+        closeMobileMenu();
+
+        // CRITICAL: Clear any pending target first
+        sessionStorage.removeItem('pendingTarget');
+        
+        if (window.location.pathname !== '/') {
+            // Store ONLY this click's target, then redirect
+            sessionStorage.setItem('pendingTarget', targetId);
+            window.location.href = '/';
+            return;
+        }
+        
+        // On /, reveal immediately (no storage)
+        revealContent(btn);
+    }
+});
+
 
 
     // async function loadComponent(containerId, filePath) {
@@ -177,8 +248,8 @@ async function loadComponent(containerId, filePath) {
 
     // 3. Deep Linking Logic (Handling ?show=ID from other pages)
     window.addEventListener('DOMContentLoaded', () => {
-        loadComponent('menu-container', 'parts/static_beans/menu.html');
-        loadComponent('right-bar-container', 'parts/static_beans/sidebar-right.html');
+        // loadComponent('menu-container', '/parts/static_beans/menu.html');
+        loadComponent('right-bar-container', '/parts/static_beans/sidebar-right.html');
         const urlParams = new URLSearchParams(window.location.search);
         const autoOpen = urlParams.get('show');
         if (autoOpen) {
@@ -231,6 +302,14 @@ function myFunction() {
   }
 }
 
+function closeMobileMenu() {
+    const navDemo = document.getElementById('navDemo');
+    if (navDemo) {
+        navDemo.className = navDemo.className.replace(' w3-show', '');
+    }
+}
+
+
 // When the user clicks anywhere outside of the modal, close it
 var modal = document.getElementById('noSlotsModal');
 window.onclick = function(event) {
@@ -260,4 +339,250 @@ window.onclick = function(event) {
   }
 });
 
-console.log(PLNG);
+// console.log(PLNG);
+
+
+// function createCookie(name, value, days) {
+
+//   var expires = "";
+//   if (days) {
+//     var date = new Date();
+//     date.setTime(date.getTime() + (days * 24 * 60 * 60 * 1000));
+//     expires = "; expires=" + date.toUTCString();
+//   }
+//   document.cookie = name + "=" + value + expires + "; path=/";
+// }
+
+// function readCookie(name) {
+//   var nameEQ = name + "=";
+//   var ca = document.cookie.split(';');
+//   for (var i = 0; i < ca.length; i++) {
+//     var c = ca[i];
+//     while (c.charAt(0) == ' ') c = c.substring(1, c.length);
+//     if (c.indexOf(nameEQ) == 0) return c.substring(nameEQ.length, c.length);
+//   }
+//   return null;
+// }
+
+//  const cookieBox = document.querySelector(".cookie-notice")
+
+// if (readCookie('cookies-accepted') !== 'true') {
+//   document.getElementById('cookie-notice').style.display = 'block';
+//     cookieBox.classList.add("show");
+
+//   document.getElementById('cookie-accept').onclick = function() {
+//     createCookie('cookies-accepted', 'true', 30);
+//     document.getElementById('cookie-notice').style.display = 'none';
+//      cookieBox.classList.remove("show");
+//     location.reload();  // Reload to enable analytics/etc.
+//   };
+//   document.getElementById('cookie-dismiss').onclick = function() {
+//     document.getElementById('cookie-notice').style.display = 'none';
+//      cookieBox.classList.remove("show");
+//   };
+// }
+
+// Menu Bar
+//
+
+// Language-aware component loader
+// const languages = ['en', 'it', 'de', 'fr', 'es'];
+// const langNames = { en: 'EN', it: 'IT', de: 'DE', fr: 'FR', es: 'ES' };
+
+const languages = ['en', 'it'];
+const langNames = { en: 'EN', it: 'IT' };
+
+// Get preferred language (localStorage → browser → default EN)
+function getPreferredLang() {
+    const stored = localStorage.getItem('userLang');
+    if (stored && languages.includes(stored)) return stored;
+    
+    const browserLang = (navigator.language || navigator.userLanguage || 'en').split('-')[0];
+    return languages.includes(browserLang) ? browserLang : 'en';
+}
+
+// Load component function (your existing one)
+function loadComponent(containerId, url) {
+    const container = document.getElementById(containerId);
+    if (!container) {
+        console.warn(`Container ${containerId} not found!`);
+        return;
+    }
+    
+    fetch(url)
+        .then(response => {
+            if (!response.ok) throw new Error(`HTTP ${response.status}`);
+            return response.text();
+        })
+        .then(html => {
+            container.innerHTML = html;
+        })
+        .catch(err => console.error('Load failed:', url, err));
+}
+
+// 3. Deep Linking + Language Logic
+window.addEventListener('DOMContentLoaded', () => {
+    // Get language first
+    const lang = getPreferredLang();
+    document.documentElement.lang = lang; // Update <html lang>
+    
+    // Load language-specific menu
+    loadComponent('menu-container', `/parts/static_beans/menu_${lang}.html`);
+    loadComponent('right-bar-container', `/parts/static_beans/sidebar-right.html`);
+    
+    // Language dropdown setup (if you have it)
+    if (document.querySelector('.lang-dropdown')) {
+        document.getElementById('current-lang').textContent = langNames[lang];
+    }
+    
+    // Deep linking (your existing logic)
+    // const urlParams = new URLSearchParams(window.location.search);
+    // const autoOpen = urlParams.get('show');
+    // if (autoOpen) {
+    //     // Wait for menu to load before clicking
+    //     setTimeout(() => {
+    //         const btn = document.querySelector(`[data-target="${autoOpen}"]`);
+    //         if (btn) btn.click();
+    //         window.history.replaceState({}, document.title, window.location.pathname);
+    //     }, 800); // Increased timeout for fetch
+    // }
+
+
+    // In DOMContentLoaded, after loadComponent...
+const urlParams = new URLSearchParams(window.location.search);
+let autoOpen = urlParams.get('show') || sessionStorage.getItem('pendingTarget');
+
+
+// let autoOpen = urlParams.get('show');
+
+// // ALWAYS clear first (defensive). // but it broks redirect!
+// sessionStorage.removeItem('pendingTarget');
+
+// Fallback to storage only if no URL param
+// if (!autoOpen) {
+//     autoOpen = sessionStorage.getItem('pendingTarget');
+// }
+
+
+// if (autoOpen) {
+//     sessionStorage.removeItem('pendingTarget');  // Clear after use
+//     setTimeout(() => {
+//         const btn = document.querySelector(`[data-target="${autoOpen}"]`);
+//         if (btn) {
+//             revealContent(btn);  // Your fetch/decode/animate function
+//         }
+//         window.history.replaceState({}, document.title, window.location.pathname);
+//     }, 1000);  // Slightly longer for menu fetch
+// }
+
+
+    // 3. NOW clear the storage (it's safe because the value is saved in the variable 'autoOpen')
+    sessionStorage.removeItem('pendingTarget');
+
+    // 4. Proceed with logic
+if (autoOpen) {
+    setTimeout(() => {
+        const btn = document.querySelector(`[data-target="${autoOpen}"]`);
+        if (btn) {
+            revealContent(btn);
+            // Scroll after revealContent
+            const targetEl = document.getElementById(autoOpen);
+            if (targetEl) {
+                targetEl.scrollIntoView({ behavior: 'smooth', block: 'start' });
+            }
+        }
+        // Clean URL
+        window.history.replaceState({}, document.title, window.location.pathname);
+    }, 1000);
+}
+
+    // 5. Global listener for buttons (for when you are on other pages)
+    document.addEventListener('click', (e) => {
+        const btn = e.target.closest('[data-target]');
+        if (btn && window.location.pathname !== '/' && window.location.pathname !== '/index.html') {
+            e.preventDefault();
+            const target = btn.getAttribute('data-target');
+            sessionStorage.setItem('pendingTarget', target); // Set it here
+            window.location.href = '/'; // Redirect
+        }
+    });
+
+});
+
+
+// 3. Deep Linking + Language Logic
+// window.addEventListener('DOMContentLoaded', () => {
+//     // Get language first
+//     const lang = getPreferredLang();
+//     document.documentElement.lang = lang; // Update <html lang>
+
+//     // Load language-specific menu
+//     loadComponent('menu-container', `/parts/static_beans/menu_${lang}.html`);
+//     loadComponent('right-bar-container', `/parts/static_beans/sidebar-right.html`);
+
+//     // Language dropdown setup (if you have it)
+//     if (document.querySelector('.lang-dropdown')) {
+//         document.getElementById('current-lang').textContent = langNames[lang];
+//     }
+
+//     // Deep linking (your existing logic)
+//     const urlParams = new URLSearchParams(window.location.search);
+//     const autoOpen = urlParams.get('show');
+//     if (autoOpen) {
+//         setTimeout(() => {
+//             const btn = document.querySelector(`[data-target="${autoOpen}"]`);
+//             if (btn) {
+//                 // Call revealContent instead of btn.click()
+//                 revealContent(btn);
+//             }
+//             window.history.replaceState({}, document.title, window.location.pathname);
+//         }, 800);
+//     }
+// });
+
+
+// window.addEventListener('DOMContentLoaded', () => {
+//     const lang = getPreferredLang();
+//     document.documentElement.lang = lang;
+    
+//     loadComponent('menu-container', `/parts/static_beans/menu_${lang}.html`);
+//     loadComponent('right-bar-container', `/parts/static_beans/sidebar-right.html`);
+    
+//     if (document.querySelector('.lang-dropdown')) {
+//         document.getElementById('current-lang').textContent = langNames[lang];
+//     }
+    
+//     // Deep linking with redirect to "/"
+//     const urlParams = new URLSearchParams(window.location.search);
+//     const autoOpen = urlParams.get('show');
+//     if (autoOpen) {
+//         const isOnRoot = window.location.pathname === '/';
+//         if (!isOnRoot) {
+//             // Redirect to /?show=... (preserves param)
+//             window.location.href = `/?show=${autoOpen}`;
+//             return;  // Exit early, let redirect handle
+//         }
+//         // On /, proceed with auto-open
+//         setTimeout(() => {
+//             const btn = document.querySelector(`[data-target="${autoOpen}"]`);
+//             if (btn) btn.click();
+//             window.history.replaceState({}, document.title, window.location.pathname);
+//         }, 800);
+//     }
+// });
+
+// Language switcher handler (call this from your dropdown)
+function switchLanguage(lang) {
+    if (!languages.includes(lang)) return;
+    
+    localStorage.setItem('userLang', lang);
+    document.documentElement.lang = lang;
+    
+    // Reload menu with new language
+    loadComponent('menu-container', `/parts/static_beans/menu_${lang}.html`);
+    
+    // Update dropdown display
+    if (document.getElementById('current-lang')) {
+        document.getElementById('current-lang').textContent = langNames[lang];
+    }
+}

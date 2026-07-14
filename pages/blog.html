@@ -1,0 +1,44 @@
+<h1>Blog Layout here 5</h1>
+
+<h1>comment 44</h1>
+{% comment %} Filter posts for current language {% endcomment %}
+
+<!-- {% assign posts = site.posts | where: 'lang', page.lang | where: 'true', page.listinghidden | sort: 'date' | reverse %}
+{% assign posts = site.posts | where: 'lang', page.lang | where: 'listinghidden', false  | sort: 'date' | reverse %} -->
+
+{% assign posts = site.posts | where: 'lang', page.lang | where_exp: 'post', 'post.listinghidden != true' | sort: 'date' | reverse %}
+
+{% if paginator %}
+  {% assign posts = paginator.posts | where: 'lang', page.lang %}
+{% endif %}
+
+
+{% for post in site.posts %}
+    {% unless post.listinghidden contains 'false' %}
+        <li><a href="{{ post.url }}">{{ post.title }}</a></li>
+    {% endif %}
+{% endfor %}
+
+{% for post in site.posts %}
+    {% unless post.categories contains 'external' %}
+        <li><a href="{{ post.url }}">{{ post.title }}</a></li>
+    {% endif %}
+{% endfor %}
+
+
+
+<!-- and item.listinghidden != true, -->
+<h1>Blog Entries-list</h1>
+
+<div class="entries-list">
+  {% for post in posts %}
+    {% if post.lang == page.lang %}
+      <article>
+        <h2><a href="{{ post.url }}">{{ post.title }}</a></h2>
+        <p>{{ post.excerpt }}</p>
+        <time>{{ post.date | date: "%B %d, %Y" }}</time>
+      </article>
+    {% endif %}
+  {% endfor %}
+</div>
+
